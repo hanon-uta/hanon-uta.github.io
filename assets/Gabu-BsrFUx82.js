@@ -1,1 +1,0 @@
-import{H as e}from"./HelloWorld-w01ppbvr.js";import{e as r,H as o,u as a,j as t,J as n}from"./404Redirect-DyQyGMT_.js";import"./index-BoZfkmoe.js";const l=r({__name:"Gabu",setup(s){return(u,m)=>(t(),o(e,{vtuber:a(n).SAOTOME_GABU.name},null,8,["vtuber"]))}});export{l as default};

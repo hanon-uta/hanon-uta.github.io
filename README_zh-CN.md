@@ -112,6 +112,6 @@ pnpm run dev
 - X(旧Twitter): [@dtkviolin](https://x.com/dtkviolin)
 
 各VTuber官方账号：
-- 香鳴ハノン: [YouTube频道](https://www.youtube.com/@kanaruhanon) | [X(旧Twitter)](https://x.com/kanaruhanon)
+- 香鳴ハノン: [YouTube频道](https://www.youtube.com/@kanaruhanon) | [Twitter](https://x.com/kanaruhanon)
 - 暁月クララ: [YouTube频道](https://www.youtube.com/@akatsukiclara) | [X(旧Twitter)](https://x.com/akatsukiclara)
 - 鎖乙女がぶ: [YouTube频道](https://www.youtube.com/@saotomegabu) | [X(旧Twitter)](https://x.com/saotomegabu)

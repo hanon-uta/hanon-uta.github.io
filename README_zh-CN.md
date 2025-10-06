@@ -7,16 +7,16 @@
 
 # 香鳴ハノン 歌回存档
 
-香鳴ハノン、暁月クララ、鎖乙女がぶ三位VTuber的YouTube歌回直播视频检索工具，支持歌曲搜索、收藏、统计等功能，帮助粉丝快速定位想听的曲目。
+香鳴ハノン、暁月クララ、鎖乙女がぶ三位虚拟偶像的YouTube歌回直播视频检索工具，支持歌曲搜索、收藏、统计等功能，帮助粉丝快速定位想听的曲目。
 
 
 ## 特点
-- 多VTuber覆盖：在香鳴ハノン基础上，新增暁月クララ、鎖乙女がぶ的歌回存档，持续补充新内容
-- 精准检索：需先选择目标VTuber再搜索，输入歌曲名/艺术家名时自动响应结果，并显示匹配的名称提示
+- 多虚拟偶像覆盖：在香鳴ハノン基础上，新增暁月クララ、鎖乙女がぶ的歌回存档，持续补充新内容
+- 精准检索：需先选择目标虚拟偶像再搜索，输入歌曲名/艺术家名时自动响应结果，并显示匹配的名称提示
 - 时间点标注：精确显示每首歌曲在视频中的开始时间（分:秒），无需手动查找
 - 一键跳转：点击结果可直接在YouTube打开视频并从指定时间点播放
 - 歌曲收藏：无需登录即可通过爱心图标收藏（仅本地保存），登录Google账号可实现多设备同步
-- 频次统计：为每位VTuber提供歌曲演唱频次图表，直观展示常唱曲目
+- 频次统计：为每位虚拟偶像提供歌曲演唱频次图表，直观展示常唱曲目
 - 视频过滤：点击视频名称可快速筛选出该视频内的所有歌曲，方便回顾单场歌回
 
 
@@ -26,11 +26,11 @@
 
 ## 功能说明
 ### 1. 歌回视频收集
-尽可能完整收录三位VTuber的YouTube歌回直播历史存档，会在本人有时间时手动更新，覆盖较新的歌回内容，方便粉丝回溯过往演唱。
+尽可能完整收录三位虚拟偶像的YouTube歌回直播历史存档，会在本人有时间时手动更新，覆盖较新的歌回内容，方便粉丝回溯过往演唱。
 
 ### 2. 精准搜索系统
-- 操作流程：先在顶部选择目标VTuber（香鳴ハノン/暁月クララ/鎖乙女がぶ），再在搜索框输入歌曲名或艺术家名，输入过程中自动响应搜索结果，同时显示匹配的歌曲/艺术家名称提示
-- 搜索结果覆盖该VTuber尽可能收集到的存档内容，无时间限制
+- 操作流程：先在顶部选择目标虚拟偶像（香鳴ハノン/暁月クララ/鎖乙女がぶ），再在搜索框输入歌曲名或艺术家名，输入过程中自动响应搜索结果，同时显示匹配的歌曲/艺术家名称提示
+- 搜索结果覆盖该虚拟偶像尽可能收集到的存档内容，无时间限制
 - 每首歌曲均标注在视频中的准确开始时间（分:秒），避免反复拖动进度条
 
 ### 3. 无缝播放体验
@@ -41,7 +41,7 @@
 - 登录Google账号可实现收藏内容多设备同步，同一账号在手机、电脑上登录都能看到
 
 ### 5. 歌曲频次统计
-为每位VTuber单独生成“歌曲演唱频次”图表，用可视化方式展示各歌曲的演唱次数，能快速了解该VTuber常唱的曲目类型。
+为每位虚拟偶像单独生成“歌曲演唱频次”图表，用可视化方式展示各歌曲的演唱次数，能快速了解该虚拟偶像常唱的曲目类型。
 
 ### 6. 视频内歌曲过滤
 在搜索结果或歌回列表中，点击任意视频的名称，页面会自动筛选出该视频内的所有歌曲并形成独立列表，方便完整回顾单场歌回的所有曲目。
@@ -69,11 +69,11 @@
 
 
 ## 使用方法
-1. 访问在线地址（新地址或旧地址均可，旧地址会自动跳转），在顶部选择需要查看的VTuber（香鳴ハノン/暁月クララ/鎖乙女がぶ）
+1. 访问在线地址（新地址或旧地址均可，旧地址会自动跳转），在顶部选择需要查看的虚拟偶像（香鳴ハノン/暁月クララ/鎖乙女がぶ）
 2. 在搜索框输入目标歌曲名或艺术家名，输入过程中会自动响应搜索结果并显示匹配的名称提示
 3. 从结果中找到想收听的歌曲，点击条目即可跳转至YouTube对应时间点播放
 4. 收藏歌曲：点击歌曲旁爱心图标，无需登录即可保存；登录Google账号可实现多设备同步
-5. 查看统计：在VTuber选择界面点击“歌曲统计”，查看演唱频次图表
+5. 查看统计：在虚拟偶像选择界面点击“歌曲统计”，查看演唱频次图表
 6. 过滤视频歌曲：点击任意视频名称，页面自动展示该视频内的所有歌曲
 
 
@@ -89,7 +89,7 @@ pnpm run dev
 ```
 
 ## 致谢
-本项目的数据参考了包括但不限于以下YouTube用户整理的歌回时间轴信息（涵盖香鳴ハノン、暁月クララ、鎖乙女がぶ三位VTuber的歌回内容）：  
+本项目的数据参考了包括但不限于以下YouTube用户整理的歌回时间轴信息（涵盖香鳴ハノン、暁月クララ、鎖乙女がぶ三位虚拟偶像的歌回内容）：  
 [@tk-taks1984](https://www.youtube.com/@tk-taks1984)、[@timestamp-nog](https://www.youtube.com/@timestamp-nog)、[@haruto-nog](https://www.youtube.com/@haruto-nog)、[@野上ハルト](https://www.youtube.com/@野上ハルト)、[@harut0_nog](https://www.youtube.com/@harut0_nog)、[@SaySay009](https://www.youtube.com/@SaySay009)、[@tomfukuとむふく](https://www.youtube.com/@tomfukutomofuku)、[@コイケン_koiken](https://www.youtube.com/@koiken_koiken)、[@remilia.s](https://www.youtube.com/@remilia.s)、[@ぽテさら](https://www.youtube.com/@potesara)、[@はこぴぴぴ](https://www.youtube.com/@hakopipipi)、[@Cyaegha](https://www.youtube.com/@Cyaegha)、[@PP-dy5nd](https://www.youtube.com/@PP-dy5nd)、[@hiyokoalex4074](https://www.youtube.com/@hiyokoalex4074)、[@atamorumoru](https://www.youtube.com/@atamorumoru)、[@とっきー-ycilysm](https://www.youtube.com/@tokki-ycilysm)、[@ke-suke_39](https://www.youtube.com/@ke-suke_39)、[@futianx1360](https://www.youtube.com/@futianx1360)、[@せきね-f7u](https://www.youtube.com/@sekine-f7u)、[@higeiwashi](https://www.youtube.com/@higeiwashi)、[@HorineSu](https://www.youtube.com/@HorineSu)、[@exl5eq28](https://www.youtube.com/@exl5eq28)
 
 新增的暁月クララ、鎖乙女がぶ相关数据，也补充参考了其他粉丝自发整理的时间轴信息。没有这些宝贵的粉丝贡献，本项目无法覆盖这么多歌回内容，在此衷心感谢所有贡献者。
@@ -103,7 +103,7 @@ pnpm run dev
 
 
 ## 数据更新说明
-数据会在本人有时间时手动更新，涵盖三位VTuber的新歌回存档与统计数据。如需请求特定歌回收录、反馈错误，或建议新增功能，可通过GitHub Issues提交。
+数据会在本人有时间时手动更新，涵盖三位虚拟偶像的新歌回存档与统计数据。如需请求特定歌回收录、反馈错误，或建议新增功能，可通过GitHub Issues提交。
 
 
 ## 联系
@@ -111,7 +111,7 @@ pnpm run dev
 - GitHub Issues: [https://github.com/kevinstrax/hanon-uta/issues](https://github.com/kevinstrax/hanon-uta/issues)
 - X(旧Twitter): [@dtkviolin](https://x.com/dtkviolin)
 
-各VTuber官方账号：
+各虚拟偶像官方账号：
 - 香鳴ハノン: [YouTube频道](https://www.youtube.com/@kanaruhanon) | [Twitter](https://x.com/kanaruhanon)
 - 暁月クララ: [YouTube频道](https://www.youtube.com/@akatsukiclara) | [X(旧Twitter)](https://x.com/akatsukiclara)
 - 鎖乙女がぶ: [YouTube频道](https://www.youtube.com/@saotomegabu) | [X(旧Twitter)](https://x.com/saotomegabu)

@@ -7,12 +7,15 @@ import { useColorModeStore } from "@/stores/color-mode.ts";
 import FavoriteIcon from "@/components/FavoriteIcon.vue";
 import { replaceQueryParam } from "@/utils/routerUtils.ts";
 import { useRoute, useRouter } from "vue-router";
+import { useScreenSize } from "@/composables/useScreenSize.ts";
 
 const props = defineProps<{ paginatedSongs: Song[] }>();
 const { isDark } = storeToRefs(useColorModeStore())
 
 const router = useRouter();
 const route = useRoute();
+
+const { isSmallScreen480 } = useScreenSize();
 
 function showVideoList(videoId: string) {
   replaceQueryParam(router, route, 'v', videoId);
@@ -47,7 +50,9 @@ function showVideoList(videoId: string) {
           <div v-if="song.tags.length > 0" class="card-tags position-absolute top-0 start-0 flex-wrap flex-wrap-reverse">
             <template v-for="tag in song.tags">
                 <span :style="'background-color: ' + nameColor(tag)"
-                      class="badge rounded-1 small m-1 opacity-868">
+                      class="badge rounded-1 small m-1 opacity-868"
+                      :class="isSmallScreen480 ? 'tag-badge' : ''"
+                      v-tooltip="isSmallScreen480 && tag.length > 10 ? `${tag}` : ''">
                     <small>{{ tag }}</small>
                 </span>
             </template>
@@ -215,6 +220,11 @@ function showVideoList(videoId: string) {
 }
 .no-arrow:after {
   display: none !important;
+}
+.tag-badge {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 </style>

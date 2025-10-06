@@ -3,8 +3,10 @@ import { onBeforeMount, onBeforeUnmount, onMounted, ref } from "vue";
 export const useScreenSize = () => {
 
     const isSmallScreen = ref(false)
+    const isSmallScreen480 = ref(false)
     const checkScreenSize = () => {
         isSmallScreen.value = window.innerWidth <= 370
+        isSmallScreen480.value = window.innerWidth < 480
     }
 
     const isMobile = ref(false)
@@ -22,6 +24,6 @@ export const useScreenSize = () => {
     })
 
     return {
-        isMobile, isSmallScreen,
+        isMobile, isSmallScreen, isSmallScreen480
     }
 }

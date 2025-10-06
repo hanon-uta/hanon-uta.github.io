@@ -21,6 +21,14 @@ const baseUrl = import.meta.env.BASE_URL; // get the base path
         <span class="text-secondary" v-if="idx != quickSearches.length - 1">|</span>
       </template>
     </p>
+
+    <p class="d-flex flex-wrap gap-2 small">
+      &copy; 2025 Hanon Uta
+      <a href="/terms.html" target="_blank">Terms of Service</a>
+      <span>·</span>
+      <a href="/privacy.html" target="_blank">Privacy Policy</a>
+    </p>
+
   </footer>
 </template>
 

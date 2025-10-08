@@ -17,6 +17,7 @@ function handleShow(msg: string, opts?: { delay?: number, html?: boolean , close
     if (showing.value) {
         return;
     }
+    let toast : Toast | null = null;
     try {
         showing.value = true;
         let liveToastElement = document.querySelector('#hononMessageToast')
@@ -30,10 +31,14 @@ function handleShow(msg: string, opts?: { delay?: number, html?: boolean , close
             close: opts?.close??false,
             text_center: opts?.text_center??true,
         };
-        new Toast(liveToastElement, { autohide: true, delay: toastConfig.value.delay, animation: true }).show()
+        toast = new Toast(liveToastElement, { autohide: true, delay: toastConfig.value.delay, animation: true });
+        toast.show();
     } finally {
         setTimeout(() => {
             showing.value = false;
+            if (toast) {
+                toast.dispose();
+            }
         }, toastConfig.value?.delay??1 + 1000);
     }
 

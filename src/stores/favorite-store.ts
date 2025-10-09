@@ -95,6 +95,8 @@ export const useFavoriteStore = defineStore("favorite-storage", {
                 let authStore = useAuthStore();
                 const { isLoggedIn } = storeToRefs(authStore);
                 if (!isLoggedIn.value) {
+                    authStore.clearToken();
+                    authStore.clearUserInfo();
                     return -1;
                 }
                 const remote = await downloadFavorites();

@@ -45,7 +45,7 @@ const {
 
 const { searchInput, searchPlaceHolders } = usePlaceholder(searchQuery, filteredSongs);
 
-const { isMobile, isSmallScreen } = useScreenSize();
+const { isMobile, isSmallScreen, breakPoint } = useScreenSize();
 const {
   // PC
   changePage,
@@ -54,7 +54,7 @@ const {
   // Mobile
   loadedSongs,
   observerTarget
-} = usePagination(isMobile, filteredSongs, currentPage, itemsPerPage, goToPage)
+} = usePagination(isMobile, breakPoint, filteredSongs, currentPage, itemsPerPage, goToPage)
 
 const { showBackTop, backToTop } = useBackTop(isMobile);
 useHeadMeta(filteredSongs, searchQuery)

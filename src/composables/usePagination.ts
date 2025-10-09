@@ -1,7 +1,8 @@
 import { computed, onMounted, ref, type Ref, watch } from "vue";
 import type { Song } from "@/types/song";
+import { DEFAULT_PAGE_SIZE } from "@/config/constants.ts";
 
-export const usePagination = (isMobile: Ref<boolean>, filteredSongs: Ref<Song[]>,
+export const usePagination = (isMobile: Ref<boolean>, breakPoint : Ref<'sm' | 'md' | 'lg' | 'xl' | 'xxl'>, filteredSongs: Ref<Song[]>,
                               currentPage: Ref<number>, itemsPerPage: Ref<number>, goToPage: Ref<number>) => {
 
     // paginated data
@@ -35,6 +36,28 @@ export const usePagination = (isMobile: Ref<boolean>, filteredSongs: Ref<Song[]>
             // The first page is loaded on mobile
             loadedSongs.value = filteredSongs.value.slice(0, itemsPerPage.value)
         }
+    })
+
+    function reCalcCurrentPage(oldPage : number, oldPageSize : number, newPageSize : number) {
+        const firstIndex = (oldPage - 1) * oldPageSize
+        if (oldPageSize < newPageSize) {
+            return Math.max(1, Math.min( Math.floor(firstIndex / newPageSize) + 1, totalPages.value))
+        } else {
+            return Math.max(1, Math.min( Math.ceil(firstIndex / newPageSize) + 1, totalPages.value))
+        }
+    }
+
+    watch([ breakPoint ], () => {
+        const oldPageSize = itemsPerPage.value;
+        if (breakPoint.value === 'xxl') {
+            itemsPerPage.value = DEFAULT_PAGE_SIZE;
+        } else if (breakPoint.value === 'xl' || breakPoint.value === 'lg') {
+            itemsPerPage.value = 12;
+        }
+        if (oldPageSize === itemsPerPage.value) {
+            return;
+        }
+        currentPage.value = goToPage.value = reCalcCurrentPage(currentPage.value, oldPageSize, itemsPerPage.value);
     })
 
     const loadMore = () => {

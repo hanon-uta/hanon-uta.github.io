@@ -5,7 +5,6 @@ import { uploadFavorites, downloadFavorites, FavoriteSync } from "@/utils/syncFa
 import { useAuthStore } from "@/stores/auth-store.ts";
 import { JsonUtils } from "@/utils/jsonUtils.ts";
 import type { FavoriteData } from "@/types/favorite";
-import { sleep } from "@/utils/timeUtils.ts";
 
 interface StorageState {
     favorites: Set<string>;
@@ -13,7 +12,6 @@ interface StorageState {
     _debouncedRemove: Map<string, ReturnType<typeof debounceFn>>;
     _debouncedUpload: ReturnType<typeof debounceFn> | null;
     favoriteSyncing: boolean;
-    _taskNum: number;
 }
 
 function initOrGetFavoriteLocal() : FavoriteData {
@@ -33,7 +31,6 @@ export const useFavoriteStore = defineStore("favorite-storage", {
         _debouncedRemove: new Map(),
         _debouncedUpload: null,
         favoriteSyncing: false,
-        _taskNum: 0,
     }),
 
     getters: {
@@ -41,15 +38,12 @@ export const useFavoriteStore = defineStore("favorite-storage", {
     },
 
     actions: {
-        async loadFavorites(init?: boolean) : Promise<number> {
-            if (!init) {
-                await sleep(3000);
-            }
+        async loadFavorites() : Promise<number> {
             if (this.favoriteSyncing) {
                 return 2;
             }
             const local = initOrGetFavoriteLocal();
-            this.favorites = new Set([...local.ids, ...Array.from(this.favorites)]);
+            this.favorites = new Set([...local.ids]);
             local.ids = Array.from(this.favorites);
             return this.trySync(local);
         },
@@ -76,7 +70,7 @@ export const useFavoriteStore = defineStore("favorite-storage", {
                         songId,
                         debounceFn(() => {
                             this.favoriteRemoving.delete(songId);
-                        }, 8080)
+                        }, 18080)
                     );
                 }
                 this._debouncedRemove.get(songId)!();
@@ -89,13 +83,13 @@ export const useFavoriteStore = defineStore("favorite-storage", {
             local.ids = Array.from(this.favorites);
             local.updateMs = Date.now();
             this._debouncedUpload?.cancel?.();
+            useAuthStore().refreshTime();
             this._debouncedUpload = debounceFn(() => this.trySync(local), 3000);
             this._debouncedUpload();
         },
         async trySync(local : FavoriteData) : Promise<number> {
-            this._taskNum++;
-            while (this.favoriteSyncing) {
-                await sleep(1000);
+            if (this.favoriteSyncing) {
+                return 0;
             }
             this.favoriteSyncing = true;
             try {
@@ -115,15 +109,11 @@ export const useFavoriteStore = defineStore("favorite-storage", {
                 if (syncResult.needUpdateCloud) {
                     await uploadFavorites(syncResult.cloud, remote.fileId).then(() => {
                         localStorage.setItem("favorites", JsonUtils.toJson(syncResult.local));
-                        if (this._taskNum <= 1) {
-                            this.favorites = new Set(syncResult.local.ids);
-                        }
+                        this.favorites = new Set(syncResult.local.ids);
                     })
                 } else {
                     localStorage.setItem("favorites", JsonUtils.toJson(syncResult.local));
-                    if (this._taskNum <= 1) {
-                        this.favorites = new Set(syncResult.local.ids);
-                    }
+                    this.favorites = new Set(syncResult.local.ids);
                 }
                 return 1;
             } catch (e) {
@@ -131,7 +121,6 @@ export const useFavoriteStore = defineStore("favorite-storage", {
                 return -1;
             } finally {
                 this.favoriteSyncing = false;
-                this._taskNum--;
             }
         }
     },

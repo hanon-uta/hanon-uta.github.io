@@ -14,16 +14,9 @@ export const useSyncFavorite = () => {
         await realTimeCheckLogin();
         if (!isLoggedIn.value) {
             await signIn();
-            await sleep(1000);
+            await sleep(500);
         }
         await storageStore.loadFavorites().then((errorCode) => {
-            if (errorCode === 3) {
-                authStore.refreshTime();
-                sleep(233);
-                if (isLoggedIn.value) {
-                    errorCode = 2;
-                }
-            }
             toast && showToast(errorCode);
         })
     }

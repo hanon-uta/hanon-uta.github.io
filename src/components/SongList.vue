@@ -51,7 +51,7 @@ function showVideoList(videoId: string) {
             <template v-for="tag in song.tags">
                 <span :style="'background-color: ' + nameColor(tag)"
                       class="badge rounded-1 small m-1 opacity-868"
-                      :class="isSmallScreen480 ? 'tag-badge' : ''"
+                      :class="{ 'tag-badge' : isSmallScreen480 }"
                       v-tooltip="isSmallScreen480 && tag.length > 10 ? `${tag}` : ''">
                     <small>{{ tag }}</small>
                 </span>
@@ -59,7 +59,7 @@ function showVideoList(videoId: string) {
           </div>
 
           <h2 v-tooltip="song.song_title" class="card-title hover-text-light rounded-1 text-truncate d-flex align-items-center h6 overflow-hidden"
-            :class="breakPoint === 'sm' ? 'small' : ''">
+            :class="{ 'small' : breakPoint === 'sm' }">
               <i class="iconfont icon-music" style="margin-right: 1.5px"></i>
               {{ song.song_title }}
           </h2>
@@ -77,7 +77,7 @@ function showVideoList(videoId: string) {
             </button>
             <ul class="dropdown-menu p-0">
               <li><h3 class="h6 dropdown-header fw-normal text-wrap p-3"
-                      :class="isDark ? 'text-light' : ''">{{song.ref_video_title}}</h3></li>
+                      :class="{ 'text-light' : isDark }">{{song.ref_video_title}}</h3></li>
               <li class="text-end small">
                 <a class="d-inline-block text-end m-3 mt-0" href="javascript:void(0);"
                    @click="showVideoList(song.ref_video_id)" role="button">&gt; 配信全曲一覧</a>

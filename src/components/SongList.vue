@@ -15,7 +15,7 @@ const { isDark } = storeToRefs(useColorModeStore())
 const router = useRouter();
 const route = useRoute();
 
-const { isSmallScreen480 } = useScreenSize();
+const { isSmallScreen480, breakPoint } = useScreenSize();
 
 function showVideoList(videoId: string) {
   replaceQueryParam(router, route, 'v', videoId);
@@ -58,9 +58,10 @@ function showVideoList(videoId: string) {
             </template>
           </div>
 
-          <h2 v-tooltip="song.song_title" class="card-title hover-text-light rounded-1 text-truncate d-flex h6">
-            <i class="iconfont icon-music" style="margin-right: 1.5px"></i>
-            {{ song.song_title }}
+          <h2 v-tooltip="song.song_title" class="card-title hover-text-light rounded-1 text-truncate d-flex align-items-center h6 overflow-hidden"
+            :class="breakPoint === 'sm' ? 'small' : ''">
+              <i class="iconfont icon-music" style="margin-right: 1.5px"></i>
+              {{ song.song_title }}
           </h2>
           <p class="card-text hover-text-light rounded-1">
             <small v-tooltip="song.song_origin_artist" class="text-muted d-block text-truncate">
@@ -163,10 +164,6 @@ function showVideoList(videoId: string) {
 .hover-text-light {
   transition: background-color .5s ease;
 }
-
-/*.hover-text-light:hover {
-  background-color: var(--bs-secondary-bg) !important;
-}*/
 
 .hover-text-light small a {
   transition: transform 0.3s ease;

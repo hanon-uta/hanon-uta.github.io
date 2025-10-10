@@ -217,10 +217,10 @@ export function sortByTime(songs: Song[]) {
 
 function fillInSongTags(song: Song) {
     let songTitleAndTags = extractAndRemove(song.song_title);
-    song.song_title = songTitleAndTags.cleanedContent
+    song.song_title = songTitleAndTags.cleanedContent.trim()
 
     let artistAndTags = extractAndRemove(song.song_origin_artist);
-    song.song_origin_artist = artistAndTags.cleanedContent
+    song.song_origin_artist = artistAndTags.cleanedContent.trim()
 
     song.tags = [ ...songTitleAndTags.extracted, ...artistAndTags.extracted ];
 }

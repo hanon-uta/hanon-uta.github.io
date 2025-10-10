@@ -3,6 +3,7 @@ import { useAuthStore } from "@/stores/auth-store.ts";
 import { storeToRefs } from "pinia";
 import { realTimeCheckLogin, signIn } from "@/utils/googleAuth.ts";
 import { useMessageToast } from "@/composables/useMessageToast.ts";
+import { sleep } from "@/utils/timeUtils.ts";
 
 export const useSyncFavorite = () => {
     const authStore = useAuthStore();
@@ -13,15 +14,27 @@ export const useSyncFavorite = () => {
         await realTimeCheckLogin();
         if (!isLoggedIn.value) {
             await signIn();
+            await sleep(1000);
         }
         await storageStore.loadFavorites().then((errorCode) => {
-            toast && showToast(errorCode >= 0)
+            if (errorCode === 3) {
+                authStore.refreshTime();
+                sleep(233);
+                if (isLoggedIn.value) {
+                    errorCode = 2;
+                }
+            }
+            toast && showToast(errorCode);
         })
     }
-    function showToast(success: boolean) {
+    function showToast(code: number) {
         const { show } = useMessageToast();
-        if (success) {
+        if (code === 1) {
             show('お気に入りの曲を同期しました！')
+        } else if (code === 2) {
+            show('操作が早すぎます。しばらく待ってから再度お試しください！')
+        } else if (code === 3) {
+            show('ログインの有効期限が切れました。再度ログインしてください！')
         } else {
             show('通信エラーのため、同期できませんでした。')
         }

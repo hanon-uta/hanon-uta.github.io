@@ -60,7 +60,7 @@ const { showBackTop, backToTop } = useBackTop(isMobile);
 useHeadMeta(filteredSongs, searchQuery)
 
 const storageStore = useFavoriteStore();
-const { isFavoriteSyncing } = storeToRefs(storageStore);
+const { favoriteSyncing } = storeToRefs(storageStore);
 const { syncFavorites } = useSyncFavorite();
 </script>
 
@@ -95,7 +95,7 @@ const { syncFavorites } = useSyncFavorite();
     <i class="iconfont iconfont-sm icon-gengxin cursor-pointer d-inline-block"
        v-tooltip="'シンク'"
        @click="syncFavorites(true)"
-       :class="isFavoriteSyncing ? 'rotation-animate' : ''" ></i>
+       :class="favoriteSyncing ? 'rotation-animate' : ''" ></i>
     <span class="ms-2">お気に入りの曲</span>
     <button aria-label="Close" class="btn-close small py-2 pe-0 position-relative" data-bs-dismiss="alert" type="button"
             @click="filterOption = ''"></button>

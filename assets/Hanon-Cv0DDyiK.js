@@ -1,0 +1,1 @@
+import{H as e}from"./HelloWorld-MOoAcWmw.js";import{e as o,J as r,j as a,u as n,L as t}from"./404Redirect-DObYdcFF.js";import"./index-BqnWBHbb.js";const l=o({__name:"Hanon",setup(s){return(m,p)=>(a(),r(e,{vtuber:n(t).KANARU_HANON.name},null,8,["vtuber"]))}});export{l as default};

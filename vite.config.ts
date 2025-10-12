@@ -18,9 +18,21 @@ const generateDynamicRoutes = () => {
         return base + (uri === '/' ? '' : uri.replace(/^\//, ''));
     });
 };
+
+const generateStaticTemplates = () => {
+    return Object.values(VTUBERS)
+        .filter(v => v.uri !== '/')
+        .map(v => {
+            return {
+                outputPath: `${ v.uri.replaceAll('/', '') }/index.html`,
+                data: { vtuber: v.name_ja, cover: v.cover, favicon: v.favicon }
+            }
+        });
+}
+
 const defaultData : any = {
+    cover: VTUBERS.KANARU_HANON.cover,
     vtuber: VTUBERS.KANARU_HANON.name_ja,
-    cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg',
     favicon: VTUBERS.KANARU_HANON.favicon,
 };
 // https://vite.dev/config/
@@ -53,25 +65,7 @@ export default defineConfig({
             apply: 'build',
             enforce: 'post',
             async writeBundle() {
-                const templates = [
-                    {
-                        outputPath: 'saotomegabu/index.html',
-                        data: {
-                            vtuber: VTUBERS.SAOTOME_GABU.name_ja,
-                            cover: 'https://img.youtube.com/vi/nMmWVciVOgk/maxresdefault.jpg',
-                            favicon: VTUBERS.SAOTOME_GABU.favicon
-                        }
-                    },
-                    {
-                        outputPath: 'akatsukiclara/index.html',
-                        data: {
-                            vtuber: VTUBERS.AKATSUKI_CLARA.name_ja,
-                            cover: 'https://img.youtube.com/vi/iavuOMwYjpg/maxresdefault.jpg',
-                            favicon: VTUBERS.AKATSUKI_CLARA.favicon
-                        }
-                    },
-                ]
-
+                const templates = generateStaticTemplates();
                 for (const template of templates) {
                     // Simple template replacement
                     let processedContent = fs.readFileSync('dist/index.html', 'utf-8')

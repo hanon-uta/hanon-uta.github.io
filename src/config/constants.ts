@@ -12,21 +12,32 @@ export const VTUBERS  = {
         name_ja: '香鳴ハノン',
         mark: '🎀🎶',
         favicon: '/favicon.png',
-        uri: '/'
+        uri: '/',
+        cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg'
     },
     SAOTOME_GABU: {
         name: 'Gabu',
         name_ja: '鎖乙女がぶ',
         mark: '🐺🩰',
         favicon: '/favicon2.png',
-        uri: '/saotomegabu'
+        uri: '/saotomegabu',
+        cover: 'https://img.youtube.com/vi/nMmWVciVOgk/maxresdefault.jpg'
     },
     AKATSUKI_CLARA: {
         name: 'Clara',
         name_ja: '暁月クララ',
         mark: '🎠💛',
         favicon: '/favicon3.png',
-        uri: '/akatsukiclara'
+        uri: '/akatsukiclara',
+        cover: 'https://img.youtube.com/vi/iavuOMwYjpg/maxresdefault.jpg'
+    },
+    TOKIWA_KANAME: {
+        name: 'Kaname',
+        name_ja: '常磐カナメ',
+        mark: '🌺🌸',
+        favicon: '/vite.svg',
+        uri: '/tokiwakaname',
+        cover: 'https://img.youtube.com/vi/xqNkizTgB-E/maxresdefault.jpg',
     }
 } as const;
 

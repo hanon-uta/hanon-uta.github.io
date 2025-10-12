@@ -35,7 +35,7 @@ export const VTUBERS  = {
         name: 'Kaname',
         name_ja: '常磐カナメ',
         mark: '🌺🌸',
-        favicon: '/vite.svg',
+        favicon: '/kaname.jpg',
         uri: '/tokiwakaname',
         cover: 'https://img.youtube.com/vi/xqNkizTgB-E/maxresdefault.jpg',
     }

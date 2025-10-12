@@ -457,7 +457,7 @@ SiOとても爽やかだったし、カナメちゃんのMORAL聴けたの良す
 0:00:00 OP\r
 0:02:32 01. Fire◎Flower / halyosy\r
 0:08:32 02.あの夏に咲け / ヨルシカ\r
-0:12:51 03.うたかた花火 / superc03.\r
+0:12:51 03.うたかた花火 / supercell\r
 0:24:00 04. Viva! Spark!トロピカル〜ジュ！プリキュア / Machico\r
 0:29:39 05.笑顔のSuncatcher / りすこ・もな from STAR☆ANIS\r
 0:34:30 06. Calc. / ジミーサムP\r

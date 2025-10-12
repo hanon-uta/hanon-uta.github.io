@@ -122,7 +122,7 @@ const e="【#パレプロ感謝祭直前歌枠リレー】初手、フィーバ�
 1:49:10 告知、スパチャ読みなど
 1:55:05 16.月並みに輝け / 結束バンド
 1:59:14 EDトークなど
-2:08:45 アンコール.ラブレター / YOASOBI
+2:08:45 #{=アンコール}ラブレター / YOASOBI
 2:12:24 1期生コラボリダイレクトまで雑談`,ce={video_title:P,video_artist:W,video_id:N,video_publish_date_str:k,song_timeline:M},he=Object.freeze(Object.defineProperty({__proto__:null,default:ce,song_timeline:M,video_artist:W,video_id:N,video_publish_date_str:k,video_title:P},Symbol.toStringTag,{value:"Module"})),j="【歌枠￤karaoke】睡眠導入？聴く天然水、バラード歌枠【パレプロ/常磐カナメ】",D="常磐カナメ -TOKIWA Kaname - パレプロ",Y="hWFZfeA1B60",z="2024-11-06 22:39:47",G=`🌸💚🎶セットリスト🌸💚🎶
 0:00:00 OP
 0:07:32 開始

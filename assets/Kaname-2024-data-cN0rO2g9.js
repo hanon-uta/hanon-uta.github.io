@@ -123,7 +123,7 @@ const e="【#パレプロ感謝祭直前歌枠リレー】初手、フィーバ�
 1:55:05 16.月並みに輝け / 結束バンド
 1:59:14 EDトークなど
 2:08:45 アンコール.ラブレター / YOASOBI
-2:12:24 1期生コラボリダイレクトまで雑談`,ce={video_title:P,video_artist:W,video_id:N,video_publish_date_str:k,song_timeline:M},he=Object.freeze(Object.defineProperty({__proto__:null,default:ce,song_timeline:M,video_artist:W,video_id:N,video_publish_date_str:k,video_title:P},Symbol.toStringTag,{value:"Module"})),j="【歌枠￤karaoke】睡眠導入？聴く天然水、バラード歌枠【パレプロ/常磐カナメ】",D="常磐カナメ -TOKIWA Kaname - パレプロ",Y="hWFZfeA1B60",z="2024-11-06 22:39:47",G=`セットリスト
+2:12:24 1期生コラボリダイレクトまで雑談`,ce={video_title:P,video_artist:W,video_id:N,video_publish_date_str:k,song_timeline:M},he=Object.freeze(Object.defineProperty({__proto__:null,default:ce,song_timeline:M,video_artist:W,video_id:N,video_publish_date_str:k,video_title:P},Symbol.toStringTag,{value:"Module"})),j="【歌枠￤karaoke】睡眠導入？聴く天然水、バラード歌枠【パレプロ/常磐カナメ】",D="常磐カナメ -TOKIWA Kaname - パレプロ",Y="hWFZfeA1B60",z="2024-11-06 22:39:47",G=`🌸💚🎶セットリスト🌸💚🎶
 0:00:00 OP
 0:07:32 開始
 0:10:42 01.回る空うさぎ / Orangestar
@@ -134,18 +134,18 @@ const e="【#パレプロ感謝祭直前歌枠リレー】初手、フィーバ�
 0:39:38 06.晩餐歌 / Tuki.
 0:44:56 07.あなたの夜が明けるまで / 傘村トータ
 0:53:50 08.不死鳥 / SEKAI NO OWARI
-0:58:58 09.あなたへ〜旅立ちに寄せるメッセージ
+0:58:58 09.あなたへ～旅立ちに寄せるメッセージ～/合唱曲
 1:04:52 10.言葉にすれば / ゴスペラーズ
-1:09:53 11.コスモス
-1:15:27 12.ヒカリ
-1:20:14 13.民衆の歌
-1:23:27 14.ホール・ニュー・ワールド
-1:28:08 15.とびら開けて
+1:09:53 11.COSMOS/合唱曲
+1:15:27 12.ヒカリ/合唱曲
+1:20:14 13.民衆の歌/ミュージカル(レ・ミゼラブル)
+1:23:27 14.ホール・ニュー・ワールド/石井一孝, 麻生かほ里
+1:28:08 15.とびら開けて/神田沙也加,津田英佑
 1:31:41 16.雪だるまつくろう / 神田沙也加・稲葉菜月・諸星すみれ
-1:36:29 17.パート・オブ・ユア・ワールド
+1:36:29 17.パート・オブ・ユア・ワールド/すずきまゆみ
 1:43:26 18.ココロデリシャス / 佐々木李子
-1:51:45 19.虹
-1:56:29 20.大切なもの
+1:51:45 19.虹 / 森山直太朗
+1:56:29 20.大切なもの/ 山崎朋子
 2:00:15 21.世界の約束 / 倍賞千恵子
 2:04:31 告知・スパチャ読みなど
 

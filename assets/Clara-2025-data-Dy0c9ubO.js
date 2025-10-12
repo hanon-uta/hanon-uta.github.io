@@ -336,8 +336,8 @@ Wishingの歌い方すごく良かったです
 
 1:45:15 ファンサ/mona(夏川椎菜)`,jn={video_title:it,video_artist:nt,video_id:ot,video_publish_date_str:_t,song_timeline:st},$o=Object.freeze(Object.defineProperty({__proto__:null,default:jn,song_timeline:st,video_artist:nt,video_id:ot,video_publish_date_str:_t,video_title:it},Symbol.toStringTag,{value:"Module"})),dt="✧︎*.〖 #めちゃすぷ 〗Palette Project オリジナル曲縛り歌枠🎨神曲見つけちゃいませんかっ？✨✨⋆꙳〖#常磐カナメ #香鳴ハノン #暁月クララ┊︎#パレプロ〗",lt="暁月クララ / Akatsuki Clara【パレプロ】",rt="LOwJ3XEJYus",at="2025-05-22",vt=`0:02:47 こんばんは〜！
 
-0:05:53 01. トイ×トイ☆パーティ / Sputrip
-0:12:22 02. トイ×トイ☆パーティ / Sputrip
+0:05:53 01. トイ×トイ☆パーティー！ / Sputrip
+0:12:22 02. トイ×トイ☆パーティー！ / Sputrip
 0:16:03 03. きっと、アイだね / Palette Project
 0:24:18 04. ストロボフラワー / Altimate!!
 0:29:42 05. ラブ・ラビリンス / RouteHeart
@@ -643,9 +643,9 @@ Just a game、とってもカッコよかったです！
 2:36:23 コール表
 2:38:39 ハレバレパレット/Palette Project#{=生歌コールチャレンジ}
 
-2:43:33 ②トイ×トイ☆パーティ
+2:43:33 ②トイ×トイ☆パーティー！
 2:43:54 コール表
-2:45:00 トイ×トイ☆パーティ/Sputrip#{=生歌コールチャレンジ}
+2:45:00 トイ×トイ☆パーティー！/Sputrip#{=生歌コールチャレンジ}
 
 2:49:08 ③君と歌いたい歌がある
 2:49:39 コール表

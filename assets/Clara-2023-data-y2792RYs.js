@@ -572,7 +572,7 @@ rain stops, good-byeの歌い方すごく良かったです！`,yo={video_title:
 07:04　白雪姫/Flower
 11:29　粉雪/レミオロメン
 16:56　初めての恋が終わる時/Ryo
-22:21　トイ×トイ☆パーティ/Sputrip
+22:21　トイ×トイ☆パーティー！/Sputrip
 
 とても珍しい歌が多くてとても良かったです！
 トイ×トイ☆パーティー！のソロビックリしました！`,Po={video_title:Bi,video_artist:Ei,video_id:Ni,video_publish_date_str:Ki,song_timeline:Li},y_=Object.freeze(Object.defineProperty({__proto__:null,default:Po,song_timeline:Li,video_artist:Ei,video_id:Ni,video_publish_date_str:Ki,video_title:Bi},Symbol.toStringTag,{value:"Module"})),Di="✧︎*.歌枠/初見さんお名前呼び┊︎このチャンネル誕生日らしい㊗おめでとう⋆꙳〖#暁月クララ┊︎#パレプロ〗",Hi="暁月クララ / Akatsuki Clara【パレプロ】",Ri="TjnOd6kFCkc",wi="2023-11-20 10:18:50",Gi=`＜セトリ＞

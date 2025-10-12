@@ -39,7 +39,7 @@ const e="【歌枠/singing】おやつの時間はクララのお歌【アイド
 1:04:43 Butter-Fly / 和田光司
 
 1:28:46 Cパート前略
-1:10:33 雪の華/中島美嘉`,kt={video_title:a,video_artist:v,video_id:c,video_publish_date_str:u,song_timeline:b},Jt=Object.freeze(Object.defineProperty({__proto__:null,default:kt,song_timeline:b,video_artist:v,video_id:c,video_publish_date_str:u,video_title:a},Symbol.toStringTag,{value:"Module"})),g="【歌枠/singing】動物がテーマのお歌を歌う！【アイドルVtuber/暁月クララ】",m="暁月クララ / Akatsuki Clara【パレプロ】",$="6xxDAtav8qA",p="2021-02-09 22:14:38",O="未找到时间轴评论",yt={video_title:g,video_artist:m,video_id:$,video_publish_date_str:p,song_timeline:O},xt=Object.freeze(Object.defineProperty({__proto__:null,default:yt,song_timeline:O,video_artist:m,video_id:$,video_publish_date_str:p,video_title:g},Symbol.toStringTag,{value:"Module"})),A="【歌枠/singing】誕生日ライブ前歌練！ノンストップで歌うぞ！【アイドルVtuber/暁月クララ】",h="暁月クララ / Akatsuki Clara【パレプロ】",S="z3RQdN7tI7k",f="2021-02-16 22:17:21",k="未找到时间轴评论",jt={video_title:A,video_artist:h,video_id:S,video_publish_date_str:f,song_timeline:k},qt=Object.freeze(Object.defineProperty({__proto__:null,default:jt,song_timeline:k,video_artist:h,video_id:S,video_publish_date_str:f,video_title:A},Symbol.toStringTag,{value:"Module"})),y="【弾き語り/sing with a guitar】のんびり歌うよぉぉ【アイドルVtuber/暁月クララ】",j="暁月クララ / Akatsuki Clara【パレプロ】",P="8GGewyJ0MXI",C="2021-02-23 22:14:16",M=`6:40 瞬き/back number
+1:10:33 雪の華/中島美嘉`,yt={video_title:a,video_artist:v,video_id:c,video_publish_date_str:u,song_timeline:b},Jt=Object.freeze(Object.defineProperty({__proto__:null,default:yt,song_timeline:b,video_artist:v,video_id:c,video_publish_date_str:u,video_title:a},Symbol.toStringTag,{value:"Module"})),g="【歌枠/singing】動物がテーマのお歌を歌う！【アイドルVtuber/暁月クララ】",m="暁月クララ / Akatsuki Clara【パレプロ】",$="6xxDAtav8qA",p="2021-02-09 22:14:38",O="未找到时间轴评论",kt={video_title:g,video_artist:m,video_id:$,video_publish_date_str:p,song_timeline:O},xt=Object.freeze(Object.defineProperty({__proto__:null,default:kt,song_timeline:O,video_artist:m,video_id:$,video_publish_date_str:p,video_title:g},Symbol.toStringTag,{value:"Module"})),h="【歌枠/singing】誕生日ライブ前歌練！ノンストップで歌うぞ！【アイドルVtuber/暁月クララ】",A="暁月クララ / Akatsuki Clara【パレプロ】",S="z3RQdN7tI7k",f="2021-02-16 22:17:21",y="未找到时间轴评论",jt={video_title:h,video_artist:A,video_id:S,video_publish_date_str:f,song_timeline:y},qt=Object.freeze(Object.defineProperty({__proto__:null,default:jt,song_timeline:y,video_artist:A,video_id:S,video_publish_date_str:f,video_title:h},Symbol.toStringTag,{value:"Module"})),k="【弾き語り/sing with a guitar】のんびり歌うよぉぉ【アイドルVtuber/暁月クララ】",j="暁月クララ / Akatsuki Clara【パレプロ】",P="8GGewyJ0MXI",C="2021-02-23 22:14:16",M=`6:40 瞬き/back number
 13:46　夢をかなえてドラえもん/Mao
 20:43　ミカヅキ/さユり
 28:14　フラレガイガール/さユり
@@ -51,7 +51,7 @@ const e="【歌枠/singing】おやつの時間はクララのお歌【アイド
 
 アコギの弾き語り、すごく落ち着いて好きです。
 ファンサのアコギはすごく新鮮でした
-フラレガイガールや世界は恋に落ちてるの感情を込めた歌い方も良かったです！`,Pt={video_title:y,video_artist:j,video_id:P,video_publish_date_str:C,song_timeline:M},Xt=Object.freeze(Object.defineProperty({__proto__:null,default:Pt,song_timeline:M,video_artist:j,video_id:P,video_publish_date_str:C,video_title:y},Symbol.toStringTag,{value:"Module"})),K="【弾き語り/sing with a guitar】もうすぐ春ですね【アイドルVtuber/暁月クララ】",R="暁月クララ / Akatsuki Clara【パレプロ】",I="ViRk0X79V7U",T="2021-03-02 22:10:53",B=`7:40　小さな恋のうた/MONGOL800
+フラレガイガールや世界は恋に落ちてるの感情を込めた歌い方も良かったです！`,Pt={video_title:k,video_artist:j,video_id:P,video_publish_date_str:C,song_timeline:M},Xt=Object.freeze(Object.defineProperty({__proto__:null,default:Pt,song_timeline:M,video_artist:j,video_id:P,video_publish_date_str:C,video_title:k},Symbol.toStringTag,{value:"Module"})),K="【弾き語り/sing with a guitar】もうすぐ春ですね【アイドルVtuber/暁月クララ】",R="暁月クララ / Akatsuki Clara【パレプロ】",I="ViRk0X79V7U",T="2021-03-02 22:10:53",B=`7:40　小さな恋のうた/MONGOL800
 18:15　カントリー・ロード/本名陽子
 23:20　虹/菅田将暉
 30:36　君はロックを聴かない/あいみょん
@@ -114,7 +114,7 @@ Cパート
 5:47:00　そっけない/RADWIMPS
 5:58:19　気まぐれロマンティック/いきものがかり
 6:04:55　ポニーテールとシュシュ/AKB48
-6:11:41　夏祭り
+6:11:41　夏祭り/Whiteberry
 
 6:21:48　さくらんぼ/大塚愛
 6:29:23　Wherever you are/ONE OK ROCK
@@ -245,7 +245,7 @@ Cパート
 タイトル通り、カラオケで盛り上がるような定番の曲多めでめちゃくちゃぶちあがる時間でした。
 ()付きのとこは人によっては多分結構貴重かもしれないですねｗ
 
-ありがと～！`,zt={video_title:ve,video_artist:ce,video_id:ue,video_publish_date_str:be,song_timeline:ge},di=Object.freeze(Object.defineProperty({__proto__:null,default:zt,song_timeline:ge,video_artist:ce,video_id:ue,video_publish_date_str:be,video_title:ve},Symbol.toStringTag,{value:"Module"})),me="【歌枠/singing stream】バラードで脳内に語りかけていくぞぞぞぞ【アイドルVtuber/暁月クララ】",$e="暁月クララ / Akatsuki Clara【パレプロ】",pe="ynZIkWxLTik",Oe="2021-05-05 20:10:44",Ae=`6:25 ドライフラワー / 優里\r
+ありがと～！`,zt={video_title:ve,video_artist:ce,video_id:ue,video_publish_date_str:be,song_timeline:ge},di=Object.freeze(Object.defineProperty({__proto__:null,default:zt,song_timeline:ge,video_artist:ce,video_id:ue,video_publish_date_str:be,video_title:ve},Symbol.toStringTag,{value:"Module"})),me="【歌枠/singing stream】バラードで脳内に語りかけていくぞぞぞぞ【アイドルVtuber/暁月クララ】",$e="暁月クララ / Akatsuki Clara【パレプロ】",pe="ynZIkWxLTik",Oe="2021-05-05 20:10:44",he=`6:25 ドライフラワー / 優里\r
 12:45 粉雪 / レミオロメン\r
 21:12 カタオモイ / Aimer\r
 25:47 なんでもないや / RADWIMPS #{=練習中,ﾃﾞﾓﾖｶｯﾀﾃﾞｽ}\r
@@ -254,7 +254,7 @@ Cパート
 49:01 テルーの唄 / 手嶌葵\r
 \r
 個人的にはカタオモイが一番すき\r
-勿論他もとてもいいぞ！`,Ht={video_title:me,video_artist:$e,video_id:pe,video_publish_date_str:Oe,song_timeline:Ae},li=Object.freeze(Object.defineProperty({__proto__:null,default:Ht,song_timeline:Ae,video_artist:$e,video_id:pe,video_publish_date_str:Oe,video_title:me},Symbol.toStringTag,{value:"Module"})),he="【歌枠/singing stream】可愛い曲縛り！アイドルの底力【アイドルVtuber/暁月クララ/パレプロ】",Se="暁月クララ / Akatsuki Clara【パレプロ】",fe="jAIM0JBjFwo",ke="2021-05-18 21:14:42",ye=`2:03 第一部ご挨拶
+勿論他もとてもいいぞ！`,Ht={video_title:me,video_artist:$e,video_id:pe,video_publish_date_str:Oe,song_timeline:he},li=Object.freeze(Object.defineProperty({__proto__:null,default:Ht,song_timeline:he,video_artist:$e,video_id:pe,video_publish_date_str:Oe,video_title:me},Symbol.toStringTag,{value:"Module"})),Ae="【歌枠/singing stream】可愛い曲縛り！アイドルの底力【アイドルVtuber/暁月クララ/パレプロ】",Se="暁月クララ / Akatsuki Clara【パレプロ】",fe="jAIM0JBjFwo",ye="2021-05-18 21:14:42",ke=`2:03 第一部ご挨拶
 
 5:18；9:20 気まぐれロマンティック/いきものがかり
 15:14；19:51 全力少年/スキマスイッチ
@@ -266,7 +266,7 @@ Cパート
 1:03:15 第一部ご挨拶（おつくらら）
 
 1:05:10 第二部ご挨拶（ショート版、雑談）
-1:17:10 第二部ご挨拶（おやすみ）`,Nt={video_title:he,video_artist:Se,video_id:fe,video_publish_date_str:ke,song_timeline:ye},ri=Object.freeze(Object.defineProperty({__proto__:null,default:Nt,song_timeline:ye,video_artist:Se,video_id:fe,video_publish_date_str:ke,video_title:he},Symbol.toStringTag,{value:"Module"})),je="【おめでとう！】暁月クララお誕生日ステージ!! Happy Birthday【パレプロ/Palette Project】#暁月クララ生誕祭2021",Pe="Palette Project Channel",Ce="RshxsvZ7Alg",Me="2021-05-12",Ke=`7:16 Dramatic Parade / Alt!!
+1:17:10 第二部ご挨拶（おやすみ）`,Nt={video_title:Ae,video_artist:Se,video_id:fe,video_publish_date_str:ye,song_timeline:ke},ri=Object.freeze(Object.defineProperty({__proto__:null,default:Nt,song_timeline:ke,video_artist:Se,video_id:fe,video_publish_date_str:ye,video_title:Ae},Symbol.toStringTag,{value:"Module"})),je="【おめでとう！】暁月クララお誕生日ステージ!! Happy Birthday【パレプロ/Palette Project】#暁月クララ生誕祭2021",Pe="Palette Project Channel",Ce="RshxsvZ7Alg",Me="2021-05-12",Ke=`7:16 Dramatic Parade / Alt!!
 11:52 コネクト / ClariS #{=アカペラ}
 18:29 茜色の約束 / いきものがかり
 26:08 いのちの名前 / 木村弓
@@ -319,7 +319,7 @@ Cパート
 27:32　とてもかわいいキビシイ対応
 
 楽しいアイドル曲いっぱいで元気出ました！`,wt={video_title:we,video_artist:Ye,video_id:Le,video_publish_date_str:Ue,song_timeline:We},ui=Object.freeze(Object.defineProperty({__proto__:null,default:wt,song_timeline:We,video_artist:Ye,video_id:Le,video_publish_date_str:Ue,video_title:we},Symbol.toStringTag,{value:"Module"})),Ge="【歌枠/singing stream】好きな歌を歌うので聞いてほちい歌枠【暁月クララ/パレプロ】",Qe="暁月クララ / Akatsuki Clara【パレプロ】",Fe="q250_JA0ogk",Ze="2021-06-24 23:13:44",Je=`3:45　めざせポケモンマスター/松本梨香
-10:08　夏祭り
+10:08　夏祭り/Whiteberry
 16:17　群青/YOASOBI#{=1回目}
 24:22　うっせぇわ/Ado
 29:02　粉雪/レミオロメン
@@ -370,4 +370,4 @@ Cパート
 
 
 カッコいい曲も可愛い曲も、
-すべてくーちゃんのかわいい歌声になってすごく良かったです！`,Gt={video_title:ct,video_artist:ut,video_id:bt,video_publish_date_str:gt,song_timeline:mt},pi=Object.freeze(Object.defineProperty({__proto__:null,default:Gt,song_timeline:mt,video_artist:ut,video_id:bt,video_publish_date_str:gt,video_title:ct},Symbol.toStringTag,{value:"Module"})),$t="【#ライブコネクト ありがとう💓】ゆるゆる振り返り雑談と少しだけ歌うかも？【暁月クララ/パレプロ】",pt="暁月クララ / Akatsuki Clara【パレプロ】",Ot="CVgEPldbuZc",At="2021-11-22 22:52:35",ht="1:21:43 お願いマッスル（トレーニング用）",Qt={video_title:$t,video_artist:pt,video_id:Ot,video_publish_date_str:At,song_timeline:ht},Oi=Object.freeze(Object.defineProperty({__proto__:null,default:Qt,song_timeline:ht,video_artist:pt,video_id:Ot,video_publish_date_str:At,video_title:$t},Symbol.toStringTag,{value:"Module"}));export{Ft as _,Zt as a,Jt as b,xt as c,qt as d,Xt as e,ei as f,ti as g,ii as h,ni as i,oi as j,_i as k,si as l,di as m,li as n,ri as o,ai as p,vi as q,ci as r,ui as s,bi as t,gi as u,mi as v,$i as w,pi as x,Oi as y};
+すべてくーちゃんのかわいい歌声になってすごく良かったです！`,Gt={video_title:ct,video_artist:ut,video_id:bt,video_publish_date_str:gt,song_timeline:mt},pi=Object.freeze(Object.defineProperty({__proto__:null,default:Gt,song_timeline:mt,video_artist:ut,video_id:bt,video_publish_date_str:gt,video_title:ct},Symbol.toStringTag,{value:"Module"})),$t="【#ライブコネクト ありがとう💓】ゆるゆる振り返り雑談と少しだけ歌うかも？【暁月クララ/パレプロ】",pt="暁月クララ / Akatsuki Clara【パレプロ】",Ot="CVgEPldbuZc",ht="2021-11-22 22:52:35",At="1:21:43 お願いマッスル#{=トレーニング用}/紗倉ひびき(ファイルーズあい)＆街雄鳴造(石川界人)",Qt={video_title:$t,video_artist:pt,video_id:Ot,video_publish_date_str:ht,song_timeline:At},Oi=Object.freeze(Object.defineProperty({__proto__:null,default:Qt,song_timeline:At,video_artist:pt,video_id:Ot,video_publish_date_str:ht,video_title:$t},Symbol.toStringTag,{value:"Module"}));export{Ft as _,Zt as a,Jt as b,xt as c,qt as d,Xt as e,ei as f,ti as g,ii as h,ni as i,oi as j,_i as k,si as l,di as m,li as n,ri as o,ai as p,vi as q,ci as r,ui as s,bi as t,gi as u,mi as v,$i as w,pi as x,Oi as y};

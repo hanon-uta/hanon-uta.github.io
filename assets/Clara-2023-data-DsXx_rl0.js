@@ -213,7 +213,7 @@ Brave Shineのサビすごく良かったです！`,to={video_title:pt,video_art
 9:10　  　君と夏フェス/SHISHAMO
 18:52　　アイドル/YOASOBI
 40:12　　少年時代/井上陽水
-1:05:54　夏祭り
+1:05:54　夏祭り/Whiteberry
 1:13:32　少女レイ/みきとP 
 1:21:32　HOT LIMIT/T.M.Revolution　#{=うろ覚えチャレンジ}
 1:29:11　ポニーテールとシュシュ/AKB48

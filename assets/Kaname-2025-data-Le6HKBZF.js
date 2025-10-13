@@ -115,7 +115,7 @@ Wake up my music聴けて嬉しかったですね…！\r
 おつかなめでした！
 
 妄想感傷代償連盟やGhost of a smileはカナメちゃんから知って好きになった曲なので聴けて嬉しかったです！
-supercellさんやセカオワさん曲も、これぞカナメちゃん！という選曲でとても良きでした！`,et={video_title:N,video_artist:E,video_id:j,video_publish_date_str:W,song_timeline:M},Et=Object.freeze(Object.defineProperty({__proto__:null,default:et,song_timeline:M,video_artist:E,video_id:j,video_publish_date_str:W,video_title:N},Symbol.toStringTag,{value:"Module"})),C="【歌枠￤karaoke】朝活歌枠、平日最終日頑張ってね♪【パレプロ/常磐カナメ】",k="常磐カナメ -TOKIWA Kaname - パレプロ",G="8SvjWdvy_IM",D="2025-04-04 19:51:33",H=`セットリスト\r
+supercellさんやセカオワさん曲も、これぞカナメちゃん！という選曲でとても良きでした！`,et={video_title:N,video_artist:E,video_id:j,video_publish_date_str:W,song_timeline:M},Et=Object.freeze(Object.defineProperty({__proto__:null,default:et,song_timeline:M,video_artist:E,video_id:j,video_publish_date_str:W,video_title:N},Symbol.toStringTag,{value:"Module"})),C="【歌枠￤karaoke】朝活歌枠、平日最終日頑張ってね♪【パレプロ/常磐カナメ】",k="常磐カナメ -TOKIWA Kaname - パレプロ",G="8SvjWdvy_IM",V="2025-04-04 19:51:33",D=`セットリスト\r
 0:00:00 OP\r
 0:01:35 開始\r
 0:07:41 01.金曜日のおはよう / HoneyWorks\r
@@ -133,7 +133,7 @@ supercellさんやセカオワさん曲も、これぞカナメちゃん！と�
 
 おつかなめでした！
 カナメちゃんのヨルシカさん(n-bunaさん)曲ほんと良きですね…
-元気になれる曲多めで楽しい歌枠でした！`,nt={video_title:C,video_artist:k,video_id:G,video_publish_date_str:D,song_timeline:H},jt=Object.freeze(Object.defineProperty({__proto__:null,default:nt,song_timeline:H,video_artist:k,video_id:G,video_publish_date_str:D,video_title:C},Symbol.toStringTag,{value:"Module"})),V="【歌枠￤karaoke】ボカロ縛り歌枠！【パレプロ/常磐カナメ】",L="常磐カナメ -TOKIWA Kaname - パレプロ",z="vOcukA2vzhg",B="2025-04-23 22:08:22",Y=`セットリスト\r
+元気になれる曲多めで楽しい歌枠でした！`,nt={video_title:C,video_artist:k,video_id:G,video_publish_date_str:V,song_timeline:D},jt=Object.freeze(Object.defineProperty({__proto__:null,default:nt,song_timeline:D,video_artist:k,video_id:G,video_publish_date_str:V,video_title:C},Symbol.toStringTag,{value:"Module"})),H="【歌枠￤karaoke】ボカロ縛り歌枠！【パレプロ/常磐カナメ】",L="常磐カナメ -TOKIWA Kaname - パレプロ",z="vOcukA2vzhg",B="2025-04-23 22:08:22",Y=`セットリスト\r
 0:00:00 OP\r
 0:03:01 開始\r
 0:03:29 01.フィクサー / ぬゆり\r
@@ -149,7 +149,7 @@ supercellさんやセカオワさん曲も、これぞカナメちゃん！と�
 0:57:01 10.地球最後の告白を / kemu\r
 1:03:01 11.あの夏が飽和する / カンザキイオリ\r
 1:09:16 12.死ぬとき死ねばいい / カンザキイオリ\r
-1:14:58 13.命に嫌われている / カンザキイオリ\r
+1:14:58 13.命に嫌われている。 / カンザキイオリ\r
 1:20:21 14.Alice in 冷凍庫 / Orangestar\r
 1:26:19 15.チェリーハント / Royal Scandal \r
 1:30:07 16.フラジール / ぬゆり\r
@@ -170,7 +170,7 @@ supercellさんやセカオワさん曲も、これぞカナメちゃん！と�
 おつかなめでした！\r
 自分ボカロ曲はあまり聴かなくてカナメちゃんから知った曲が多いのですが、フリィダムロリィタや妄想感傷代償連盟、メリューなどめちゃすこだし、カナメちゃんの歌うカンザキイオリさん曲もとても良きですね…！\r
 \r
-いっぱいのお歌聴けて良き夜更けとなりました！`,tt={video_title:V,video_artist:L,video_id:z,video_publish_date_str:B,song_timeline:Y},Wt=Object.freeze(Object.defineProperty({__proto__:null,default:tt,song_timeline:Y,video_artist:L,video_id:z,video_publish_date_str:B,video_title:V},Symbol.toStringTag,{value:"Module"})),w="【歌枠￤karaoke】パレプロオリジナル曲縛り歌枠！【パレプロ/常磐カナメ】",U="常磐カナメ -TOKIWA Kaname - パレプロ",F="rUeYkuFvHnQ",J="2025-04-26 18:42:24",q=`セットリスト\r
+いっぱいのお歌聴けて良き夜更けとなりました！`,tt={video_title:H,video_artist:L,video_id:z,video_publish_date_str:B,song_timeline:Y},Wt=Object.freeze(Object.defineProperty({__proto__:null,default:tt,song_timeline:Y,video_artist:L,video_id:z,video_publish_date_str:B,video_title:H},Symbol.toStringTag,{value:"Module"})),w="【歌枠￤karaoke】パレプロオリジナル曲縛り歌枠！【パレプロ/常磐カナメ】",U="常磐カナメ -TOKIWA Kaname - パレプロ",F="rUeYkuFvHnQ",J="2025-04-26 18:42:24",q=`セットリスト\r
 0:00:00 OP\r
 0:03:16 with your JOURNEY / Sputrip\r
 0:11:28 02.Starry☆Melody / Sputrip\r
@@ -268,17 +268,19 @@ Ghost of a smile、カナメちゃんから知って好きになった曲なの�
 00:26:44　 05.オトメロディー/高橋美佳子\r
 00:30:47　 ED
 
-とても楽しい歌枠でした！サンリオの曲とパレプロの曲が聴きて嬉しい！`,st={video_title:ve,video_artist:ce,video_id:ue,video_publish_date_str:Oe,song_timeline:pe},Dt=Object.freeze(Object.defineProperty({__proto__:null,default:st,song_timeline:pe,video_artist:ce,video_id:ue,video_publish_date_str:Oe,video_title:ve},Symbol.toStringTag,{value:"Module"})),Se="【#るかなめ】プリキュア縛り歌枠！【彩音るか/常磐カナメ】",Ae="常磐カナメ -TOKIWA Kaname - パレプロ",me="VI0RuShZv6I",be="2025-05-26 04:04:47",ge=`【セトリ】
-00:00:00　 OP
-00:01:25　 01.キミとアイドルプリキュア♪ Light Up!/キミとアイドルプリキュア♪
-00:08:33　 02.FUN☆FUN☆わんだふるDAYS！/わんだふるぷりきゅあ!
-00:12:50　 03.HUGっと!未来☆ドリーマー/HUGっと！プリキュア
-00:22:45　 04.シュビドゥビ☆スイーツタイム/キラキラ☆プリキュアアラモード
-00:31:58　 05.魔法アラ・ドーモ!/魔法つかいプリキュア!
-00:43:08　 06.夢は未来への道～キュアスカーレットVer.～/GO!プリンセスプリキュア
-00:54:21　 07.All for one Forever/映画プリキュアオールスターズF
-00:59:14　 ED
-プリキュアらしい元気いっぱいのコラボ歌枠でとても楽しかったです！`,dt={video_title:Se,video_artist:Ae,video_id:me,video_publish_date_str:be,song_timeline:ge},Ht=Object.freeze(Object.defineProperty({__proto__:null,default:dt,song_timeline:ge,video_artist:Ae,video_id:me,video_publish_date_str:be,video_title:Se},Symbol.toStringTag,{value:"Module"})),$e="【歌枠】ボカロ縛り歌枠です【パレプロ/常磐カナメ】",Ie="常磐カナメ -TOKIWA Kaname - パレプロ",fe="dy7qGbwnY3M",he="2025-05-30 22:17:28",Te=`セットリスト\r
+とても楽しい歌枠でした！サンリオの曲とパレプロの曲が聴きて嬉しい！`,st={video_title:ve,video_artist:ce,video_id:ue,video_publish_date_str:Oe,song_timeline:pe},Vt=Object.freeze(Object.defineProperty({__proto__:null,default:st,song_timeline:pe,video_artist:ce,video_id:ue,video_publish_date_str:Oe,video_title:ve},Symbol.toStringTag,{value:"Module"})),Se="【#るかなめ】プリキュア縛り歌枠！【彩音るか/常磐カナメ】",Ae="常磐カナメ -TOKIWA Kaname - パレプロ",me="VI0RuShZv6I",be="2025-05-26 04:04:47",ge=`🌸💚🎶セットリスト🦈🎙🎶
+0:00:00 OP
+0:01:23 01.キミとアイドルプリキュア♪ Light Up! / 石井あみ・熊田茜音・吉武千颯
+0:08:33 02.FUN☆FUN☆わんだふるDAYS! / 石井あみ&後本萌葉
+0:12:49 03.HUGっと!未来☆ドリーマー / キュアエール(CV:引坂理絵)、キュアアンジュ(CV:本泉莉奈)、キュアエトワール(CV:小倉唯)
+0:22:44 04.シュビドゥビ☆スイーツタイム / 宮本佳那子
+0:31:58 05.魔法アラ・ドーモ! / キュアミラクル(CV:高橋李依)&キュアマジカル(CV:堀江由衣)&キュアフェリーチェ(CV:早見沙織)
+0:43:09 06.夢は未来への道～キュアスカーレットVer.～ / 北川理恵#{=カナメソロ}
+0:54:20 07.All for one Forever / 吉武千颯 & 礒部花凜&sol;北川理恵&sol;駒形友梨&sol;Machico&sol;宮本佳那子
+
+
+おつるかなめでした！
+お二人の歌声が重なってとても素敵な歌でしたね…！`,dt={video_title:Se,video_artist:Ae,video_id:me,video_publish_date_str:be,song_timeline:ge},Dt=Object.freeze(Object.defineProperty({__proto__:null,default:dt,song_timeline:ge,video_artist:Ae,video_id:me,video_publish_date_str:be,video_title:Se},Symbol.toStringTag,{value:"Module"})),$e="【歌枠】ボカロ縛り歌枠です【パレプロ/常磐カナメ】",Ie="常磐カナメ -TOKIWA Kaname - パレプロ",fe="dy7qGbwnY3M",he="2025-05-30 22:17:28",Te=`セットリスト\r
 0:00:00 OP\r
 0:00:09 開始 \r
 0:10:17 01.逢魔時の帰り方 / しとお\r
@@ -300,7 +302,7 @@ Ghost of a smile、カナメちゃんから知って好きになった曲なの�
 1:13:34 17.君の神様になりたい / カンザキイオリ\r
 1:18:02 18.あの夏が飽和する / カンザキイオリ\r
 1:24:20 19.死ぬとき死ねばいい / カンザキイオリ\r
-1:29:36 20.命に嫌われている / カンザキイオリ\r
+1:29:36 20.命に嫌われている。 / カンザキイオリ\r
 1:34:17 21. ODDS&ENDS / ryo(supercell)\r
 1:43:30 22.アンノウン・マザーグース / wowaka\r
 1:49:11 23.罪の名前 / ryo(supercell)\r
@@ -321,7 +323,7 @@ Ghost of a smile、カナメちゃんから知って好きになった曲なの�
 初めて聴く曲も多かったのですが、以前カナメちゃんの歌枠で知った曲で久しぶりに聴いた曲も多くて、とてもエモでしたね…\r
 個人的にCalc.や六兆年と一夜物語、妄想感傷代償連盟とてもすこでしたし、カナメちゃんの歌うカンザキイオリさん曲、歌みたの方も良きですが歌枠で聴くとライブ感あって良きでした！\r
 \r
-花が落ちたので、のリベンジも期待しております！`,lt={video_title:$e,video_artist:Ie,video_id:fe,video_publish_date_str:he,song_timeline:Te},Vt=Object.freeze(Object.defineProperty({__proto__:null,default:lt,song_timeline:Te,video_artist:Ie,video_id:fe,video_publish_date_str:he,video_title:$e},Symbol.toStringTag,{value:"Module"})),ye="オフラインライブ開催決定～！オリジナル曲縛り歌枠！【パレプロ/常磐カナメ】",Pe="常磐カナメ -TOKIWA Kaname - パレプロ",Ke="KSMI0EAGL3U",Re="2025-06-06 22:10:24",Ne=`セットリスト\r
+花が落ちたので、のリベンジも期待しております！`,lt={video_title:$e,video_artist:Ie,video_id:fe,video_publish_date_str:he,song_timeline:Te},Ht=Object.freeze(Object.defineProperty({__proto__:null,default:lt,song_timeline:Te,video_artist:Ie,video_id:fe,video_publish_date_str:he,video_title:$e},Symbol.toStringTag,{value:"Module"})),ye="オフラインライブ開催決定～！オリジナル曲縛り歌枠！【パレプロ/常磐カナメ】",Pe="常磐カナメ -TOKIWA Kaname - パレプロ",Ke="KSMI0EAGL3U",Re="2025-06-06 22:10:24",Ne=`セットリスト\r
 0:00:00 OP\r
 0:04:00 01.夏ゆきトキメキ High Tension! / Palette Project\r
 0:14:29 02. Summer is Over / Altimate!!\r
@@ -377,7 +379,7 @@ Realizeのカナメちゃんの低音すごく好きですし、トイ×トイ�
 カナメちゃんの好きをいっぱい聴けてとても良き時間でした！\r
 BT37.5、またリベンジで聴けたら嬉しいです…！\r
 \r
-陽茅ちゃんとのコラボも楽しみにしております！`,vt={video_title:Ee,video_artist:je,video_id:We,video_publish_date_str:Me,song_timeline:Ce},zt=Object.freeze(Object.defineProperty({__proto__:null,default:vt,song_timeline:Ce,video_artist:je,video_id:We,video_publish_date_str:Me,video_title:Ee},Symbol.toStringTag,{value:"Module"})),ke="初コラボ歌枠！ﾏﾙﾁｸﾘｴｲﾀｰやちほのと！【陽茅ほのか/常磐カナメ】#ほのカナメ",Ge="常磐カナメ -TOKIWA Kaname - パレプロ",De="OD8lT7nVrsI",He="2025-06-16 20:13:17",Ve=`セットリスト🩵 \r
+陽茅ちゃんとのコラボも楽しみにしております！`,vt={video_title:Ee,video_artist:je,video_id:We,video_publish_date_str:Me,song_timeline:Ce},zt=Object.freeze(Object.defineProperty({__proto__:null,default:vt,song_timeline:Ce,video_artist:je,video_id:We,video_publish_date_str:Me,video_title:Ee},Symbol.toStringTag,{value:"Module"})),ke="初コラボ歌枠！ﾏﾙﾁｸﾘｴｲﾀｰやちほのと！【陽茅ほのか/常磐カナメ】#ほのカナメ",Ge="常磐カナメ -TOKIWA Kaname - パレプロ",Ve="OD8lT7nVrsI",De="2025-06-16 20:13:17",He=`セットリスト🩵 \r
 0:00:00 OP\r
 0:05:38 開始\r
 0:10:04 01.深海少女 / ゆうゆ\r
@@ -398,7 +400,7 @@ BT37.5、またリベンジで聴けたら嬉しいです…！\r
 どの曲もとても良かったですが、深海少女、メルティランドナイトメア、flosが特にすこすこのすこでしたね…！\r
 陽茅ちゃんの選曲センスほんと良すぎでした！\r
 \r
-またお二人のコラボ歌枠見たいし、その時は配信でも言ってましたがパレプロオリ曲の歌唱なども聴けたらとても嬉しいですね…！`,ct={video_title:ke,video_artist:Ge,video_id:De,video_publish_date_str:He,song_timeline:Ve},Bt=Object.freeze(Object.defineProperty({__proto__:null,default:ct,song_timeline:Ve,video_artist:Ge,video_id:De,video_publish_date_str:He,video_title:ke},Symbol.toStringTag,{value:"Module"})),Le="七月最初の歌枠！色々告知あったね！【パレプロ/常磐カナメ】",ze="常磐カナメ -TOKIWA Kaname - パレプロ",Be="xqNkizTgB-E",Ye="2025-07-02 21:09:31",we=`セットリスト\r
+またお二人のコラボ歌枠見たいし、その時は配信でも言ってましたがパレプロオリ曲の歌唱なども聴けたらとても嬉しいですね…！`,ct={video_title:ke,video_artist:Ge,video_id:Ve,video_publish_date_str:De,song_timeline:He},Bt=Object.freeze(Object.defineProperty({__proto__:null,default:ct,song_timeline:He,video_artist:Ge,video_id:Ve,video_publish_date_str:De,video_title:ke},Symbol.toStringTag,{value:"Module"})),Le="七月最初の歌枠！色々告知あったね！【パレプロ/常磐カナメ】",ze="常磐カナメ -TOKIWA Kaname - パレプロ",Be="xqNkizTgB-E",Ye="2025-07-02 21:09:31",we=`セットリスト\r
 0:00:00 ？？？\r
 0:00:17 OP\r
 0:03:22 01.黙ってロックをやれって言ってんの！ / 猫舘こたつ\r
@@ -634,7 +636,7 @@ SiOとても爽やかだったし、カナメちゃんのMORAL聴けたの良す
 1:49:09 16.ワンルームシュガーライフ / ナナヲアカリ\r
 1:53:20 17.ベリイ・ベリイ・スイート・ホワイト♡ / Special for Princess!\r
 2:07:22 18.タイムマシン / SEKAI NO OWARI\r
-2:12:41 19.周波数 / SEKAI NO OWARI`,It={video_title:Wn,video_artist:Mn,video_id:Cn,video_publish_date_str:kn,song_timeline:Gn},xt=Object.freeze(Object.defineProperty({__proto__:null,default:It,song_timeline:Gn,video_artist:Mn,video_id:Cn,video_publish_date_str:kn,video_title:Wn},Symbol.toStringTag,{value:"Module"})),Dn="【歌枠￤karaoke】土夕定期歌枠です【パレプロ/常磐カナメ】",Hn="常磐カナメ -TOKIWA Kaname - パレプロ",Vn="IRi9SdXNMVA",Ln="2025-10-04 18:55:18",zn=`セットリスト\r
+2:12:41 19.周波数 / SEKAI NO OWARI`,It={video_title:Wn,video_artist:Mn,video_id:Cn,video_publish_date_str:kn,song_timeline:Gn},xt=Object.freeze(Object.defineProperty({__proto__:null,default:It,song_timeline:Gn,video_artist:Mn,video_id:Cn,video_publish_date_str:kn,video_title:Wn},Symbol.toStringTag,{value:"Module"})),Vn="【歌枠￤karaoke】土夕定期歌枠です【パレプロ/常磐カナメ】",Dn="常磐カナメ -TOKIWA Kaname - パレプロ",Hn="IRi9SdXNMVA",Ln="2025-10-04 18:55:18",zn=`セットリスト\r
 0:00:00 OP\r
 0:03:42 開始\r
 0:10:11 01.オペラ!スペースオペラ! / ナユタン星人\r
@@ -660,7 +662,7 @@ SiOとても爽やかだったし、カナメちゃんのMORAL聴けたの良す
 私へ、初めて聴きましたが、歌詞やメロディラインは君の知らない物語なのに印象はガラッと変わって心締め付けられちゃいますね…！\r
 そしてまほやくの舞台曲、こちらも初めて聴きましたがすごく良い曲過ぎました…！\r
 \r
-ハロウィン以外縛りはカナメちゃんの反骨精神を強く感じちゃいましたｗ`,ft={video_title:Dn,video_artist:Hn,video_id:Vn,video_publish_date_str:Ln,song_timeline:zn},e0=Object.freeze(Object.defineProperty({__proto__:null,default:ft,song_timeline:zn,video_artist:Hn,video_id:Vn,video_publish_date_str:Ln,video_title:Dn},Symbol.toStringTag,{value:"Module"})),Bn="【#オールアイカツ歌枠リレー 】あこがれは、最初の道しるべ！【パレプロ/常磐カナメ】",Yn="常磐カナメ -TOKIWA Kaname - パレプロ",wn="rJSoCopb4N4",Un="2025-10-05 20:45:59",Fn=`セットリスト\r
+ハロウィン以外縛りはカナメちゃんの反骨精神を強く感じちゃいましたｗ`,ft={video_title:Vn,video_artist:Dn,video_id:Hn,video_publish_date_str:Ln,song_timeline:zn},e0=Object.freeze(Object.defineProperty({__proto__:null,default:ft,song_timeline:zn,video_artist:Dn,video_id:Hn,video_publish_date_str:Ln,video_title:Vn},Symbol.toStringTag,{value:"Module"})),Bn="【#オールアイカツ歌枠リレー 】あこがれは、最初の道しるべ！【パレプロ/常磐カナメ】",Yn="常磐カナメ -TOKIWA Kaname - パレプロ",wn="rJSoCopb4N4",Un="2025-10-05 20:45:59",Fn=`セットリスト\r
 0:00:00 OP\r
 0:02:02 01. So Beautiful Story / るか・せな from AIKATSU☆STARS!\r
 0:12:29 02. オーロラプリンセス / えり・わか from STAR☆ANIS\r
@@ -672,4 +674,4 @@ SiOとても爽やかだったし、カナメちゃんのMORAL聴けたの良す
 おつかなめでした！\r
 \r
 憧れは道標、とても感じることができるセトリでした！\r
-カナメちゃんがこの道に進むきっかけになったアイカツに感謝…！`,ht={video_title:Bn,video_artist:Yn,video_id:wn,video_publish_date_str:Un,song_timeline:Fn},n0=Object.freeze(Object.defineProperty({__proto__:null,default:ht,song_timeline:Fn,video_artist:Yn,video_id:wn,video_publish_date_str:Un,video_title:Bn},Symbol.toStringTag,{value:"Module"}));export{Xt as A,xt as B,e0 as C,n0 as D,Tt as _,yt as a,Pt as b,Kt as c,Rt as d,Nt as e,Et as f,jt as g,Wt as h,Mt as i,Ct as j,kt as k,Gt as l,Dt as m,Ht as n,Vt as o,Lt as p,zt as q,Bt as r,Yt as s,wt as t,Ut as u,Ft as v,Jt as w,qt as x,Zt as y,Qt as z};
+カナメちゃんがこの道に進むきっかけになったアイカツに感謝…！`,ht={video_title:Bn,video_artist:Yn,video_id:wn,video_publish_date_str:Un,song_timeline:Fn},n0=Object.freeze(Object.defineProperty({__proto__:null,default:ht,song_timeline:Fn,video_artist:Yn,video_id:wn,video_publish_date_str:Un,video_title:Bn},Symbol.toStringTag,{value:"Module"}));export{Xt as A,xt as B,e0 as C,n0 as D,Tt as _,yt as a,Pt as b,Kt as c,Rt as d,Nt as e,Et as f,jt as g,Wt as h,Mt as i,Ct as j,kt as k,Gt as l,Vt as m,Dt as n,Ht as o,Lt as p,zt as q,Bt as r,Yt as s,wt as t,Ut as u,Ft as v,Jt as w,qt as x,Zt as y,Qt as z};

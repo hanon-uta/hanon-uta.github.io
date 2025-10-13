@@ -28,7 +28,7 @@ export function nameColor(name: string): string {
     if (name.includes('くーちゃん') || name.includes('暁月クララ') || name.includes('クララちゃん')) {
         return characterColors['暁月クララ'];
     }
-    if (name.includes('常磐カナメ') || name.includes('カナメちゃん')) {
+    if (name.includes('常磐カナメ') || name.includes('カナメちゃん') || name.includes('カナメ')) {
         return characterColors['常磐カナメ'];
     }
     if (name.includes('今羽にこ')) {

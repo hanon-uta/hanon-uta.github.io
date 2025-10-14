@@ -16,7 +16,7 @@ const { isStatsInit } = storeToRefs(useModalInitStore())
 </script>
 
 <template>
-  <div id="exampleModal2" aria-hidden="true" aria-labelledby="exampleModalLabel2" class="modal fade" tabindex="-2">
+  <div id="exampleModal2" aria-hidden="true" aria-labelledby="exampleModalLabel2" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
       <div class="modal-content h-100">
         <div class="modal-header">

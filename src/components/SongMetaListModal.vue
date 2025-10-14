@@ -65,7 +65,7 @@ const { isSongMetaListInit } = storeToRefs(modalInitStore);
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="songMeta in songMetaGroup.song_metas">
                       <div class="list-group-item-content">
-                        <a href="javascript: void(0)" @click="updateSearchQuery(songMeta.title)" class="d-block text-body" data-bs-dismiss="modal" >{{songMeta.title}}</a>
+                        <a href="javascript: void(0)" @click="updateSearchQuery(songMeta.title)" class="d-block text-body" data-bs-dismiss="modal" >{{songMeta.title}}</a href="javascript: void(0)">
                         <i class="small fst-normal text-secondary">{{songMeta.artist}}</i>
                       </div>
                     </li>

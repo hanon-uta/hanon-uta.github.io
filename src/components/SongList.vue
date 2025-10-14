@@ -88,10 +88,10 @@ function showVideoList(videoId: string) {
           </div>
           <p class="card-text hover-text-light rounded-1 d-flex align-items-center justify-content-between">
             <small class="text-muted">
-              <a :href="song.ref_video_url" :title="song.song_title" class="text-decoration-none text-secondary d-block"
+              <a :href="song.ref_video_url" :title="song.song_title" class="d-flex align-items-center text-decoration-none text-secondary d-block"
                  target="_blank" rel="noopener noreferrer">
                 <i class="iconfont iconfont-sm icon-bofang"></i>
-                <span class="ms-1" style="vertical-align: text-top">{{ song.song_start_time }}</span></a>
+                <span class="ms-1">{{ song.song_start_time }}</span></a>
             </small>
             <FavoriteIcon :song-id="song.song_id" />
           </p>

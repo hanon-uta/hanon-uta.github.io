@@ -1,1 +1,0 @@
-import{H as e}from"./HelloWorld-RbHkffTh.js";import{e as r,J as o,u as a,j as t,L as n}from"./404Redirect-BDab5W3X.js";import"./index-BuIL9Pod.js";const l=r({__name:"Gabu",setup(s){return(u,m)=>(t(),o(e,{vtuber:a(n).SAOTOME_GABU.name},null,8,["vtuber"]))}});export{l as default};

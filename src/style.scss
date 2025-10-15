@@ -87,3 +87,15 @@ body {
         @extend .text-danger;
     }
 }
+
+@mixin flex-gap($size) {
+    margin-right: -#{$size};
+    margin-bottom: -#{$size};
+    > * {
+        margin-right: $size;
+        margin-bottom: $size;
+    }
+}
+.my-gap-2 {
+    @include flex-gap(0.5rem);
+}

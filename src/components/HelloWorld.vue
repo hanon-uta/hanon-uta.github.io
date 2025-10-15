@@ -133,45 +133,47 @@ const { syncFavorites } = useSyncFavorite();
     <SongList :paginated-songs="paginatedSongs"/>
     <!-- displays the current page number and total -->
     <nav v-if="totalPages > 1"
-         class="text-center text-muted small mt-4 mb-2 d-flex justify-content-center align-items-center gap-2">
-      <input
-        :class="[{ disabled: currentPage === 1 }, isDark ? 'btn-dark border' : 'btn-light']"
-        :disabled="currentPage === 1"
-        aria-label="前のページ"
-        class="btn rounded-end-0 responsive-width"
-        style="min-width: 55px"
-        type="button"
-        value="&lsaquo;"
-        @click.prevent="changePage(currentPage - 1)"/>
-      <!-- page jump -->
-      <input
-        v-model.number="goToPage"
-        :class="[{ 'form-control-sm': isSmallScreen }, isDark ? 'btn-dark border' : 'btn-light']"
-        :max="totalPages"
-        :style="{ width: isSmallScreen ? '60px' : '70px' }"
-        class="form-control"
-        min="1"
-        type="number"
-        @keyup.enter="changePage(goToPage)"
-      >
-      <span :class="[{'small': isSmallScreen}]" class="text-muted text-nowrap">/ {{ totalPages }}<span
-        class="d-none d-xxs-inline">ページ</span></span>
-      <input
-        :class="isDark ? 'btn-dark border' : 'btn-light'"
-        class="btn"
-        type="button"
-        value="移動"
-        @click="changePage(goToPage)"
-      />
-      <input
-        :class="[{ disabled: currentPage === totalPages }, isDark ? 'btn-dark border' : 'btn-light']"
-        :disabled="currentPage === totalPages"
-        aria-label="次のページ"
-        class="btn rounded-start-0 responsive-width"
-        style="min-width: 55px"
-        type="button"
-        value="&rsaquo;"
-        @click.prevent="changePage(currentPage + 1)"/>
+         class="text-center text-muted small mt-4 mb-2">
+      <div class="d-flex justify-content-center align-items-center my-gap-2">
+        <input
+          :class="[{ disabled: currentPage === 1 }, isDark ? 'btn-dark border' : 'btn-light']"
+          :disabled="currentPage === 1"
+          aria-label="前のページ"
+          class="btn rounded-end-0 responsive-width"
+          style="min-width: 55px"
+          type="button"
+          value="&lsaquo;"
+          @click.prevent="changePage(currentPage - 1)"/>
+        <!-- page jump -->
+        <input
+          v-model.number="goToPage"
+          :class="[{ 'form-control-sm': isSmallScreen }, isDark ? 'btn-dark border' : 'btn-light']"
+          :max="totalPages"
+          :style="{ width: isSmallScreen ? '60px' : '70px' }"
+          class="form-control"
+          min="1"
+          type="number"
+          @keyup.enter="changePage(goToPage)"
+        >
+        <span :class="[{'small': isSmallScreen}]" class="text-muted text-nowrap">/ {{ totalPages }}<span
+          class="d-none d-xxs-inline">ページ</span></span>
+        <input
+          :class="isDark ? 'btn-dark border' : 'btn-light'"
+          class="btn"
+          type="button"
+          value="移動"
+          @click="changePage(goToPage)"
+        />
+        <input
+          :class="[{ disabled: currentPage === totalPages }, isDark ? 'btn-dark border' : 'btn-light']"
+          :disabled="currentPage === totalPages"
+          aria-label="次のページ"
+          class="btn rounded-start-0 responsive-width"
+          style="min-width: 55px"
+          type="button"
+          value="&rsaquo;"
+          @click.prevent="changePage(currentPage + 1)"/>
+      </div>
     </nav>
 
     <p class="text-center mb-4">

@@ -56,7 +56,7 @@ const { isLoggedIn } = storeToRefs(authStore);
     </div>
 
     <!-- Button trigger modal -->
-    <div class="d-flex justify-content-between gap-2">
+    <div class="d-flex justify-content-between my-gap-2">
       <div class="position-relative">
         <button class="btn" :class="isDark ? 'btn-dark border' : 'btn-light'" data-bs-target="#staticBackdrop" data-bs-toggle="modal" type="button"
                 @click="modalInitStore.triggerSongInfoInit()">

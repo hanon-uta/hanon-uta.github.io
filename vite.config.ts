@@ -113,6 +113,7 @@ export default defineConfig({
         include: [ 'bootstrap' ]
     },
     build: {
+        target: ['chrome78', 'firefox78', 'edge78', 'safari13'],
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, 'index.html'),

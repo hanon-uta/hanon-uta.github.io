@@ -91,7 +91,7 @@ function showVideoList(videoId: string) {
               <a :href="song.ref_video_url" :title="song.song_title" class="d-flex align-items-center text-decoration-none text-secondary d-block"
                  target="_blank" rel="noopener noreferrer">
                 <i class="iconfont iconfont-sm icon-bofang"></i>
-                <span class="ms-1">{{ song.song_start_time }}</span></a>
+                <span class="ms-1 text-box-auto">{{ song.song_start_time }}</span></a>
             </small>
             <FavoriteIcon :song-id="song.song_id" />
           </p>

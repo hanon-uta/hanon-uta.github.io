@@ -51,7 +51,7 @@ export const generateMeta = (
             { property: 'og:description', content: descriptionText },
             {
                 property: 'og:image',
-                content: computed(() => filteredSongs.value[0]?.ref_video_thumbnail_url)
+                content: computed(() => filteredSongs.value[0]?.video_thumbnail_url)
             },
 
             // Twitter Card
@@ -63,7 +63,7 @@ export const generateMeta = (
             { name: 'twitter:description', content: descriptionText },
             {
                 name: 'twitter:image',
-                content: computed(() => filteredSongs.value[0]?.ref_video_thumbnail_url)
+                content: computed(() => filteredSongs.value[0]?.video_thumbnail_url)
             }
         ]
     }

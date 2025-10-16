@@ -3,7 +3,7 @@ import type { Song } from '@/types/song';
 import type { SongsInfo } from '@/types/songs-info';
 import type { Video } from "@/types/video";
 import he from 'he'
-import { checkAndFormatTime, parseTs, timeToSeconds } from './timeUtils'
+import { checkAndFormatTime, parseTs, timestampToDate, timeToSeconds } from './timeUtils'
 import { apiRequest } from "@/api/instance.ts";
 import type { SongMetaGroup } from "@/types/song-meta";
 import { extractAndRemove } from "@/utils/placeholderUtils.ts";
@@ -186,8 +186,8 @@ async function loadVideos(v: string): Promise<Video[]> {
 // Shared time-based comparison function (descending by date, ascending by offset)
 function compareByTime(a: Song, b: Song): number {
     // Primary sort: video publish date (newest first)
-    const dateA = Number(a.ref_video_publish_date_ts ?? 0);
-    const dateB = Number(b.ref_video_publish_date_ts ?? 0);
+    const dateA = Number(a.video_publish_date_ts ?? 0);
+    const dateB = Number(b.video_publish_date_ts ?? 0);
     if (dateA > dateB) return -1;
     if (dateA < dateB) return 1;
 
@@ -230,12 +230,12 @@ function parseSong(videos: Video[]): Song[] {
 
     videos.forEach((video) => {
         parseSongTimeline(video.song_timeline).forEach((songMeta: any) => {
-            let offsetSec = timeToSeconds(songMeta.time);
-            let song: Song = {
-                ref_video_title: video.video_title,
-                ref_video_artist: video.video_artist,
-                ref_video_url: `https://www.youtube.com/watch?v=${ video.video_id }&t=${ offsetSec }s`,
-                ref_video_embed_url: `https://www.youtube.com/embed/${ video.video_id }`,
+            const offsetSec = timeToSeconds(songMeta.time);
+            const publishDateTs = parseTs(video.video_publish_date_str);
+            const song: Song = {
+                video_title: video.video_title,
+                video_author: video.video_artist,
+                video_url: `https://www.youtube.com/watch?v=${ video.video_id }&t=${ offsetSec }s`,
                 /**
                  * maxresdefault.jpg - Highest resolution (may not be present in all videos)
                  * sddefault.jpg - Standard clarity
@@ -243,11 +243,12 @@ function parseSong(videos: Video[]): Song[] {
                  * mqdefault.jpg - Medium quality
                  * default.jpg - Default quality
                  */
-                ref_video_thumbnail_url: video.sd_cover === false ? `https://img.youtube.com/vi/${ video.video_id }/mqdefault.jpg`
+                video_thumbnail_url: video.sd_cover === false ? `https://img.youtube.com/vi/${ video.video_id }/mqdefault.jpg`
                     : `https://img.youtube.com/vi/${ video.video_id }/sddefault.jpg`,
-                ref_video_thumbnail_lqip_url: `https://img.youtube.com/vi/${ video.video_id }/mqdefault.jpg`,
-                ref_video_publish_date_ts: parseTs(video.video_publish_date_str),
-                ref_video_id: video.video_id,
+                video_thumbnail_lqip_url: `https://img.youtube.com/vi/${ video.video_id }/mqdefault.jpg`,
+                video_publish_date_ts:  publishDateTs,
+                video_publish_date: timestampToDate(publishDateTs),
+                video_id: video.video_id,
                 song_id: genSongId(video.video_id, songMeta.time),
                 song_origin_artist: he.decode(songMeta.artist),
                 song_title: he.decode(songMeta.title),
@@ -258,7 +259,7 @@ function parseSong(videos: Video[]): Song[] {
             if (validSong(song)) {
                 song.song_start_time = checkAndFormatTime(song.song_start_time)
                 // regen song id by formatted time
-                song.song_id = genSongId(song.ref_video_id, song.song_start_time)
+                song.song_id = genSongId(song.video_id, song.song_start_time)
                 fillInSongTags(song);
                 songs.push(song);
             } else {

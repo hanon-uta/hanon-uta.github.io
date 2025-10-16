@@ -62,7 +62,7 @@ let seasonTop30Chart: Chart | null = null;
 const availableYears = computed(() => {
   const years = new Set<number>();
   props.allSongs.forEach(song => {
-    const year = new Date(song.ref_video_publish_date_ts * 1000).getFullYear();
+    const year = new Date(song.video_publish_date_ts * 1000).getFullYear();
     years.add(year);
   });
   return Array.from(years).sort((a, b) => b - a);
@@ -103,7 +103,7 @@ const topSongsData = computed(() => {
   const filteredSongs = selectedYear.value === 'all'
       ? props.allSongs
       : props.allSongs.filter(song => {
-        const year = new Date(song.ref_video_publish_date_ts * 1000).getFullYear();
+        const year = new Date(song.video_publish_date_ts * 1000).getFullYear();
         return year.toString() === selectedYear.value;
       });
 
@@ -129,7 +129,7 @@ const monthlyData = computed(() => {
   const monthlyCounts: { [key: string]: number } = {};
 
   props.allSongs.forEach(song => {
-    const date = new Date(song.ref_video_publish_date_ts * 1000);
+    const date = new Date(song.video_publish_date_ts * 1000);
     const yearMonth = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`;
     monthlyCounts[yearMonth] = (monthlyCounts[yearMonth] || 0) + 1;
   });
@@ -147,7 +147,7 @@ const yearlyData = computed(() => {
   const yearlyCounts: { [key: string]: number } = {};
 
   props.allSongs.forEach(song => {
-    const year = new Date(song.ref_video_publish_date_ts * 1000).getFullYear().toString();
+    const year = new Date(song.video_publish_date_ts * 1000).getFullYear().toString();
     yearlyCounts[year] = (yearlyCounts[year] || 0) + 1;
   });
 
@@ -164,14 +164,14 @@ const seasonalData = computed(() => {
   const filteredSongs = selectedSeasonYear.value === 'all'
       ? props.allSongs
       : props.allSongs.filter(song => {
-        const year = new Date(song.ref_video_publish_date_ts * 1000).getFullYear();
+        const year = new Date(song.video_publish_date_ts * 1000).getFullYear();
         return year.toString() === selectedSeasonYear.value;
       });
 
   const seasonCounts : { [key: string]: number } = { '春': 0, '夏': 0, '秋': 0, '冬': 0 };
 
   filteredSongs.forEach(song => {
-    const month = new Date(song.ref_video_publish_date_ts * 1000).getMonth() + 1;
+    const month = new Date(song.video_publish_date_ts * 1000).getMonth() + 1;
     const season = getSeason(month);
     seasonCounts[season]++;
   });
@@ -186,7 +186,7 @@ const seasonalData = computed(() => {
 const seasonTop30SongsData = computed(() => {
   // Filter songs that match the selected season
   const filteredSongs = props.allSongs.filter(song => {
-    const publishDate = new Date(song.ref_video_publish_date_ts * 1000);
+    const publishDate = new Date(song.video_publish_date_ts * 1000);
     const songMonth = publishDate.getMonth() + 1; // Convert to 1-12
     const songSeason = getSeason(songMonth);
     return songSeason === selectedSeason.value;

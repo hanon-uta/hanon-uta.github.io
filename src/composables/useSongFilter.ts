@@ -75,7 +75,7 @@ export const useSongFilter = (songs: Ref<Song[]>, searchQuery: Ref<string>, filt
     function filterSongByOptions(songs: Song[]) {
         return songs.filter(song => {
             if (applyVideoIdFilter()) {
-                return filterVideoId.value === song.ref_video_id;
+                return filterVideoId.value === song.video_id;
             }
             return true;
         }).filter(song => {

@@ -27,13 +27,13 @@ function showVideoList(videoId: string) {
 <template>
   <TransitionGroup tag="section" name="fade-only" mode="out-in"
                    class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-2 g-2">
-    <article v-for="(song, _) in props.paginatedSongs" :key="song.ref_video_url">
+    <article v-for="(song, _) in props.paginatedSongs" :key="song.video_url">
       <div class="card h-100 hover-bg-light p-0">
         <div class="card-img-top ratio ratio-16x9 position-relative overflow-hidden">
-          <a :href="song.ref_video_url" class="d-flex align-items-center justify-content-center overflow-hidden" target="_blank" rel="noopener noreferrer">
+          <a :href="song.video_url" class="d-flex align-items-center justify-content-center overflow-hidden" target="_blank" rel="noopener noreferrer">
             <img v-lazy="{
-                  src: song.ref_video_thumbnail_url,
-                  loading: song.ref_video_thumbnail_lqip_url
+                  src: song.video_thumbnail_url,
+                  loading: song.video_thumbnail_lqip_url
                 }" :alt="song.song_title" :title="song.song_title" loading="lazy" class="img-fluid w-100"/>
           </a>
         </div>
@@ -65,33 +65,33 @@ function showVideoList(videoId: string) {
             <button class="btn user-select-text text-wrap text-start p-0 dropdown-toggle drop border-0 no-arrow" data-bs-toggle="dropdown"
                     data-bs-offset="0,10" aria-expanded="false" >
               <small class="text-muted card-subtitle multi-line-ellipsis-2">
-                {{song.ref_video_title}}
+                {{ song.video_title }}
               </small>
             </button>
             <ul class="dropdown-menu p-0">
               <li>
                 <h3 :class="{ 'text-light' : isDark }"
                     class="h6 dropdown-header fw-normal text-wrap p-3">
-                  {{ song.ref_video_title }}<br />
+                  {{ song.video_title }}<br />
                 <span class="badge d-inline-block mt-3 border text-secondary rounded-1 small"
                       :class=" isDark ? 'bg-dark' : 'bg-light'">
-                  <small>{{ timestampToDate(song.ref_video_publish_date_ts) }}</small>
+                  <time :datetime="song.video_publish_date">{{song.video_publish_date }}</time>
                 </span>
                 </h3>
               </li>
               <li class="small">
                 <button class="btn btn-sm border d-inline-block text-end m-3 mt-0"
                         :class="isDark ? 'btn-dark' : 'btn-light'"
-                   @click="showVideoList(song.ref_video_id)" role="button">配信全曲一覧</button>
+                        @click="showVideoList(song.video_id)" role="button">配信全曲一覧</button>
               </li>
             </ul>
           </div>
           <p class="card-text hover-text-light rounded-1 d-flex align-items-center justify-content-between">
             <small class="text-muted">
-              <a :href="song.ref_video_url" :title="song.song_title" class="d-flex align-items-center text-decoration-none text-secondary d-block"
+              <a :href="song.video_url" :title="song.song_title" class="d-flex align-items-center text-decoration-none text-secondary d-block"
                  target="_blank" rel="noopener noreferrer">
                 <i class="iconfont iconfont-sm icon-bofang"></i>
-                <span class="ms-1 text-box-auto">{{ song.song_start_time }}</span></a>
+                <time :datetime="song.song_start_time" class="ms-1 text-box-auto">{{ song.song_start_time }}</time></a>
             </small>
             <FavoriteIcon :song-id="song.song_id" />
           </p>

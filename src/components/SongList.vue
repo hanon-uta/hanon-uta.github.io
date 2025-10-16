@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { Song } from '@/types/song'
-import { timestampToDate } from "@/utils/timeUtils.ts";
 import { nameColor } from "@/utils/songTagUtils.ts";
 import { storeToRefs } from "pinia";
 import { useColorModeStore } from "@/stores/color-mode.ts";

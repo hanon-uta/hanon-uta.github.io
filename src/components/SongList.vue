@@ -74,7 +74,7 @@ function showVideoList(videoId: string) {
                   {{ song.video_title }}<br />
                 <span class="badge d-inline-block mt-3 border text-secondary rounded-1 small"
                       :class=" isDark ? 'bg-dark' : 'bg-light'">
-                  <time :datetime="song.video_publish_date">{{song.video_publish_date }}</time>
+                  <time class="small" :datetime="song.video_publish_date">{{song.video_publish_date }}</time>
                 </span>
                 </h3>
               </li>

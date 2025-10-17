@@ -39,10 +39,10 @@ function showVideoList(videoId: string) {
 
         <div class="card-body position-relative">
           <!-- Song tags -->
-          <div v-if="song.tags.length > 0" class="card-tags position-absolute top-0 start-0 flex-wrap flex-wrap-reverse">
+          <div v-if="song.tags.length > 0" class="card-tags ms-1 position-absolute top-0 start-0 d-flex flex-wrap flex-wrap-reverse">
             <template v-for="tag in song.tags">
                 <span :style="'background-color: ' + nameColor(tag)"
-                      class="badge rounded-1 small m-1 opacity-868 overflow-hidden"
+                      class="badge rounded-1 small me-1 mb-1 opacity-868 overflow-hidden"
                       :class="{ 'tag-badge' : isSmallScreen480 }"
                       v-tooltip="isSmallScreen480 && tag.length > 10 ? `${tag}` : ''">
                     <small>{{ tag }}</small>

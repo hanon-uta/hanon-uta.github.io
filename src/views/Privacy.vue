@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.BASE_URL; // get the base path
         <li class="breadcrumb-item active" aria-current="page">Privacy</li>
       </ol>
     </nav>
-    <h1 class="text-center mb-5">Privacy Policy</h1>
+    <h2 class="h1 text-center mb-5">Privacy Policy</h2>
     <p>Last updated: October 5, 2025</p>
 
     <p>This website "Hanon Uta"（香鳴ハノン歌枠検索 - 非公式）uses Google OAuth to allow users to sign in with their Google account. We only request minimal permissions ("Drive AppData" and "Profile") to store user favorites privately on your own Google Drive AppData folder. No data is ever shared with any third party or stored on external servers.</p>

@@ -14,24 +14,24 @@ const baseUrl = import.meta.env.BASE_URL; // get the base path
         <li class="breadcrumb-item active" aria-current="page">Terms</li>
       </ol>
     </nav>
-    <h1 class="text-center mb-5">Terms of Service</h1>
+    <h2 class="h1 text-center mb-5">Terms of Service</h2>
     <p>Last updated: October 5, 2025</p>
 
     <p>Welcome to Hanon Uta ("the Service"). By accessing or using this website, you agree to be bound by the following terms and conditions.</p>
 
-    <h2 class="h3 mt-4">1. Use of the Service</h2>
+    <h3 class="mt-4">1. Use of the Service</h3>
     <p>This website allows users to search and organize music stream archives and optionally log in with Google to sync personal favorites. You agree to use the Service only for lawful purposes and in accordance with these Terms.</p>
 
-    <h2 class="h3 mt-4">2. User Accounts and Data</h2>
+    <h3 class="mt-4">2. User Accounts and Data</h3>
     <p>When you sign in with Google, your account is authenticated through Google OAuth. We only request minimal permissions ("Drive AppData" and "Profile") and do not store any personal information on external servers.</p>
 
-    <h2 class="h3 mt-4">3. Intellectual Property</h2>
+    <h3 class="mt-4">3. Intellectual Property</h3>
     <p>All content, design, and code of the Service are owned by the developer unless otherwise stated. You may not reproduce or redistribute them without permission.</p>
 
-    <h2 class="h3 mt-4">4. Disclaimer</h2>
+    <h3 class="mt-4">4. Disclaimer</h3>
     <p>The Service is provided "as is" without warranties of any kind. The developer is not responsible for any damages or data loss that may occur from using the Service.</p>
 
-    <h2 class="h3 mt-4">5. Contact</h2>
+    <h3 class="mt-4">5. Contact</h3>
     <p>If you have questions or concerns about these Terms, please contact the developer at <a href="mailto:dtkviolin@gmail.com">dtkviolin@gmail.com</a>.</p>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { VTUBER_KEYS } from "@/config/constants.ts";
+import { VTUBER_KEYS, VTUBER_URIS } from "@/config/constants.ts";
 import { useColorModeStore } from "@/stores/color-mode.ts";
 import { useModalInitStore } from "@/stores/modal-init.ts";
 import { storeToRefs } from "pinia";
@@ -19,6 +19,10 @@ const menuRoutes = computed(() => {
     .filter(r => VTUBER_KEYS.includes(r.name as string));
 })
 
+const isMenuRoute = computed(() => {
+  return VTUBER_URIS.includes(router.currentRoute.value.path)
+})
+
 const currentRouteTitle = computed(() => {
   return (router.currentRoute.value.meta.title || 'ページを選択')
       + (router.currentRoute.value.meta.mark ?? '')
@@ -31,7 +35,7 @@ const { isLoggedIn } = storeToRefs(authStore);
 </script>
 
 <template>
-  <nav class="d-flex justify-content-between my-4">
+  <nav v-if="isMenuRoute" class="d-flex justify-content-between my-4">
     <div class="dropdown">
       <button
           class="btn dropdown-toggle"

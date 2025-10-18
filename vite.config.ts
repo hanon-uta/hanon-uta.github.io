@@ -20,7 +20,7 @@ const generateDynamicRoutes = () => {
 };
 
 const generateStaticTemplates = () => {
-    return Object.values(VTUBERS)
+    const templates = Object.values(VTUBERS)
         .filter(v => v.uri !== '/')
         .map(v => {
             return {
@@ -28,6 +28,18 @@ const generateStaticTemplates = () => {
                 data: { vtuber: v.name_ja, cover: v.cover, favicon: v.favicon }
             }
         });
+    // other pages
+    templates.push(...[{
+        outputPath: '/404.html',
+        data: defaultData
+    }, {
+        outputPath: '/terms.html',
+        data: defaultData
+    }, {
+        outputPath: '/privacy.html',
+        data: defaultData
+    }])
+    return templates;
 }
 
 const defaultData : any = {
@@ -95,7 +107,6 @@ export default defineConfig({
                     if (!fs.existsSync(fullOutputDir)) {
                         fs.mkdirSync(fullOutputDir, { recursive: true })
                     }
-
                     minifiedContent.then(value => {
                         fs.writeFileSync(path.join('dist', template.outputPath), value)
                         console.log('Generated:', template.outputPath)
@@ -117,7 +128,6 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, 'index.html'),
-                page_404: path.resolve(__dirname, '404.html'),
             },
             output: {
                 manualChunks: (id) => {

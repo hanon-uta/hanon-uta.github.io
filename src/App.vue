@@ -3,7 +3,6 @@ import Nav from "@/components/Nav.vue";
 import InitialLoading from "@/components/InitialLoading.vue";
 import { useLoadingStore } from '@/stores/loading'
 import { storeToRefs } from 'pinia'
-import { use404Redirect } from "@/utils/404Redirect";
 import { useColorModeStore } from "@/stores/color-mode.ts";
 import { onBeforeUnmount, onMounted } from "vue";
 
@@ -19,8 +18,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   colorMode.destroy()
 })
-
-use404Redirect();
 
 </script>
 

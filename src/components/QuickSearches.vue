@@ -28,9 +28,9 @@ const baseUrl = import.meta.env.BASE_URL; // get the base path
     <p>
       <span class="d-flex flex-wrap my-gap-2 small">
         <span>&copy; 2025 Hanon Uta</span>
-      <a href="/terms.html" target="_blank">Terms of Service</a>
+      <a :href="`${baseUrl}terms.html`" target="_blank">Terms of Service</a>
       <span>·</span>
-      <a href="/privacy.html" target="_blank">Privacy Policy</a>
+      <a :href="`${baseUrl}privacy.html`" target="_blank">Privacy Policy</a>
       </span>
     </p>
   </footer>

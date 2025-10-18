@@ -52,3 +52,5 @@ export const VTUBER_NAME_TO_JA: Record<VtuberValues, string> = Object.values(VTU
     acc[vtuber.name as VtuberValues] = vtuber.name_ja;
     return acc;
 }, {} as Record<VtuberValues, string>);
+
+

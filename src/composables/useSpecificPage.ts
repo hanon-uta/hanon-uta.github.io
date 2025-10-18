@@ -6,7 +6,7 @@ import { useLoadingStore } from "@/stores/loading.ts";
 export const useSpecificPage = () => {
     onMounted(async () => {
         const route = useRoute();
-        useHeadMeta(ref<[]> ([]), ref<string>(route.meta.title));
+        useHeadMeta(ref<[]> ([]), ref<string>(route.meta.title), true);
         useLoadingStore().completeLoading();
     })
 };

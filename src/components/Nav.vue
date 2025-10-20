@@ -20,8 +20,12 @@ const menuRoutes = computed(() => {
 })
 
 const isMenuRoute = computed(() => {
-  const firstSegment = "/" + window.location.pathname.split('/').filter(Boolean)[0] || '';
-  return VTUBER_URIS.includes(firstSegment)
+  const currentPath = router.currentRoute.value.path;
+  console.log(currentPath);
+  if (currentPath === '/') {
+    return true;
+  }
+  return VTUBER_URIS.includes(currentPath.replace(/\/$/, ''))
 })
 
 const currentRouteTitle = computed(() => {

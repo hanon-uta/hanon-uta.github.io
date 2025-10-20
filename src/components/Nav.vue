@@ -21,7 +21,6 @@ const menuRoutes = computed(() => {
 
 const isMenuRoute = computed(() => {
   const currentPath = router.currentRoute.value.path;
-  console.log(currentPath);
   if (currentPath === '/') {
     return true;
   }

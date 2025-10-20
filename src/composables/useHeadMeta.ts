@@ -14,7 +14,7 @@ export const useHeadMeta = (filteredSongs: Ref<Song[]>, searchQuery: Ref<String>
         if (searchQuery.value && searchQuery.value.trim() !== '') {
             if (filteredSongs.value.length > 0) {
                 // Search results page
-                return `${ searchQuery.value.trim() }｜${ vtuber }が歌った回を一覧`;
+                return `${ searchQuery.value.trim() } | ${ vtuber }さんが歌った回を一覧`;
             }
             if (page) {
                 return `${searchQuery.value} | ${ baseTitle }`;

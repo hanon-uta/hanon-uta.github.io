@@ -1,0 +1,1 @@
+import{d as e,e as o,b as r,o as a,V as t}from"./index-CXGrkbS7.js";import{H as n}from"./HelloWorld-CODU5gyr.js";import"./useHeadMeta-CvIDUrMJ.js";const u=e({__name:"Kaname",setup(s){return(m,p)=>(a(),o(n,{vtuber:r(t).TOKIWA_KANAME.name},null,8,["vtuber"]))}});export{u as default};

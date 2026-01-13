@@ -13,7 +13,8 @@ const characterColors =
         '香鳴ハノン': '#4FC0EC',
         '藤宮コトハ': '#FF99FF',
         '今羽にこ': '#42A5F5',
-        '水科葵': colors[8]
+        '水科葵': colors[8],
+        '鎖乙女がぶ': '#c68ef6'
     }
 
 export function timestampColor(timestamp: number): string {
@@ -39,6 +40,9 @@ export function nameColor(name: string): string {
     }
     if (name.includes('水科葵')) {
         return characterColors['水科葵']
+    }
+    if (name.includes('がぶ')) {
+        return characterColors['鎖乙女がぶ']
     }
     const hash = hashString(name);
     const index = Math.abs(hash) % colors.length;

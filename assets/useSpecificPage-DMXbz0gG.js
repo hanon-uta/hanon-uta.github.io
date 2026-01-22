@@ -1,0 +1,1 @@
+import{l as t,r as e,q as a,L as s}from"./index-BhbW1Xaf.js";import{u as r}from"./useHeadMeta-V4iZWM93.js";const n=()=>{t(async()=>{const o=a();r(e([]),e(o.meta.title),!0),s().completeLoading()})};export{n as u};

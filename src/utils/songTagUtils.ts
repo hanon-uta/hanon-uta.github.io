@@ -6,7 +6,7 @@ const colors = [
     '#90CAF9', '#64B5F6', '#42A5F5',
     '#2196F3', '#1E88E5', '#1976D2',
 ];
-const characterColors =
+export const characterColors =
     {
         '常磐カナメ': '#02BC3F',
         '暁月クララ': '#FA7D09',

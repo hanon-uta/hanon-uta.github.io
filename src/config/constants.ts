@@ -7,14 +7,7 @@ export const SITE_DESC : string = 'さんの過去の歌枠から、ライブ配
     '曲名やアーティスト名を入力するだけで、該当箇所にワンクリックで移動できる非公式ツール。';
 
 export const VTUBERS  = {
-    KANARU_HANON: {
-        name: 'Hanon',
-        name_ja: '香鳴ハノン',
-        mark: '🎀🎶',
-        favicon: '/favicon.png',
-        uri: '/',
-        cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg'
-    },
+
     SAOTOME_GABU: {
         name: 'Gabu',
         name_ja: '鎖乙女がぶ',
@@ -22,6 +15,14 @@ export const VTUBERS  = {
         favicon: '/favicon2.png',
         uri: '/saotomegabu',
         cover: 'https://img.youtube.com/vi/nMmWVciVOgk/maxresdefault.jpg'
+    },
+    KANARU_HANON: {
+        name: 'Hanon',
+        name_ja: '香鳴ハノン',
+        mark: '🎀🎶',
+        favicon: '/favicon.png',
+        uri: '/',
+        cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg'
     },
     AKATSUKI_CLARA: {
         name: 'Clara',
@@ -38,7 +39,8 @@ export const VTUBERS  = {
         favicon: '/kaname.jpg',
         uri: '/tokiwakaname',
         cover: 'https://img.youtube.com/vi/xqNkizTgB-E/maxresdefault.jpg',
-    }
+    },
+
 } as const;
 
 type Vtubers = typeof VTUBERS;

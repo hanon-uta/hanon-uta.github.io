@@ -1,0 +1,16 @@
+# Ignore generated icons
+*.png
+!icon.svg
+
+# Ignore node_modules (if using npm)
+node_modules/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

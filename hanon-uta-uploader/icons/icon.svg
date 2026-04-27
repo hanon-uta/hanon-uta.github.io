@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="20" fill="#2196F3"/>
+  <g transform="translate(64, 64)">
+    <!-- Microphone body -->
+    <rect x="-12" y="-35" width="24" height="50" rx="12" fill="white"/>
+    <!-- Microphone head -->
+    <ellipse cx="0" cy="-35" rx="12" ry="15" fill="white"/>
+    <!-- Microphone stand -->
+    <rect x="-3" y="15" width="6" height="20" fill="white"/>
+    <rect x="-15" y="35" width="30" height="4" rx="2" fill="white"/>
+  </g>
+</svg>

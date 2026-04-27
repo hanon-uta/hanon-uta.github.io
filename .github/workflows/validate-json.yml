@@ -44,8 +44,8 @@ jobs:
               return false;
             }
             
-            // Validate date format
-            if (!/^\d{4}-\d{2}-\d{2}$/.test(content.video_publish_date_str)) {
+            // Validate date format (YYYY-MM-DD, YYYY-MM-DD HH:MM:SS, or YYYY-MM-DD_N)
+            if (!/^\d{4}-\d{2}-\d{2}(?:\s\d{2}:\d{2}:\d{2})?(?:_\d+)?$/.test(content.video_publish_date_str)) {
               console.error('Invalid date format in', filePath);
               return false;
             }

@@ -45,8 +45,11 @@ jobs:
             }
             
             // Validate date format (YYYY-MM-DD, YYYY-MM-DD HH:MM:SS, or YYYY-MM-DD_N)
+            // Examples: "2024-12-28", "2024-12-28 12:00:02", "2024-05-02_2"
             if (!/^\d{4}-\d{2}-\d{2}(?:\s\d{2}:\d{2}:\d{2})?(?:_\d+)?$/.test(content.video_publish_date_str)) {
               console.error('Invalid date format in', filePath);
+              console.error('Expected format: YYYY-MM-DD or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD_N');
+              console.error('Got:', content.video_publish_date_str);
               return false;
             }
             

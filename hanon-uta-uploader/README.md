@@ -163,6 +163,30 @@ The timeline should follow this format:
 
 Each line should start with a timestamp (HH:MM:SS or MM:SS) followed by the song information.
 
+## Placeholder Support
+
+The extension supports the `#{=x}` placeholder for marking songs that need manual completion:
+
+**Usage**:
+- Add `#{=x}` in the song title or artist
+- Example: `0:11:39 01. Unknown Song #{=x} / Artist`
+- Example: `0:17:06 02. Song Title / #{=x}`
+
+**Visual Indication**:
+- Songs with `#{=x}` are highlighted with a yellow background
+- A warning icon (⚠️) is displayed next to the song
+- This helps identify songs that need manual editing before upload
+
+**Example Timeline**:
+```
+0:03:20 Opening
+0:11:39 01. Luna say maybe / 月村手毬
+0:17:06 02. 極光 / 葛城リーリヤ
+0:23:45 03. Unknown Song #{=x} / #{=x}
+```
+
+In this example, the third song will be highlighted with a warning indicator, indicating it needs manual completion.
+
 ## Troubleshooting
 
 ### "Failed to extract data"

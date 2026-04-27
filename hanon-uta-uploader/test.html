@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+  <h1>Test Page</h1>
+  <button id="test-btn">Click Me</button>
+  <div id="output"></div>
+  
+  <script>
+    console.log('Script loaded');
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM Content Loaded');
+      const btn = document.getElementById('test-btn');
+      console.log('Button found:', btn);
+      btn.addEventListener('click', () => {
+        console.log('Button clicked!');
+        document.getElementById('output').textContent = 'Button clicked!';
+      });
+    });
+  </script>
+</body>
+</html>

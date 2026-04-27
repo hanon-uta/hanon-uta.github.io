@@ -246,6 +246,17 @@ pre {
   padding: 20px;
 }
 
+/* Song with placeholder */
+.song-item.has-placeholder {
+  background: #fff3cd;
+  border-left: 3px solid #ffc107;
+}
+
+.placeholder-indicator {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
 /* Timeline Editor */
 #timeline-editor-text {
   width: 100%;

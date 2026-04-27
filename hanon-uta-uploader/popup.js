@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log('DOM Content Loaded');
+  
+  // Global error handler
+  window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
+  });
+  
+  // Unhandled promise rejection handler
+  window.addEventListener('unhandledrejection', (event) => {
+    console.error('Unhandled promise rejection:', event.reason);
+  });
+  
+  // Test button click
+  console.log('Testing button elements...');
+  const allButtons = document.querySelectorAll('button');
+  console.log('Found buttons:', allButtons.length);
+  allButtons.forEach((btn, index) => {
+    console.log(`Button ${index}:`, btn.id, btn.textContent);
+  });
+  
   const setupSection = document.getElementById('setup-section');
   const uploadSection = document.getElementById('upload-section');
   const settingsSection = document.getElementById('settings-section');
@@ -25,359 +45,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const publishDateInput = document.getElementById('publish-date');
   const fileSuffixInput = document.getElementById('file-suffix');
   const githubRepoInput = document.getElementById('github-repo');
-  const updateConfigBtn = document.getElementById('update-config-btn');
-  const clearStateBtn = document.getElementById('clear-state-btn');
+  const updateTokenBtn = document.getElementById('update-token-btn');
+  
+  // Test: Add click listener to all buttons
+  allButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      console.log('Button clicked:', btn.id, btn.textContent);
+    });
+  });
+  
+  // Show status message
+  function showStatus(message, type) {
+    status.textContent = message;
+    status.className = `status ${type}`;
+  }
   
   let currentData = null;
   let availableTimelines = [];
   let selectedTimeline = null;
   
-  // Save state to storage
-  async function saveState() {
-    const stateToSave = {
-      currentData: currentData,
-      availableTimelines: availableTimelines,
-      selectedTimeline: selectedTimeline !== null ? availableTimelines.findIndex(t => t.timeline === selectedTimeline) : null,
-      vtuber: vtuberSelect.value,
-      publishDate: publishDateInput.value,
-      fileSuffix: fileSuffixInput.value
-    };
-    await chrome.storage.local.set(stateToSave);
-  }
-  
-  // Clear saved state
-  async function clearState() {
-    await chrome.storage.local.remove([
-      'currentData',
-      'availableTimelines',
-      'selectedTimeline',
-      'vtuber',
-      'publishDate',
-      'fileSuffix'
-    ]);
-  }
-  
-  // Restore state from storage
-  async function restoreState() {
-    const { 
-      currentData: savedData, 
-      availableTimelines: savedTimelines,
-      selectedTimeline: savedTimeline,
-      vtuber: savedVtuber,
-      publishDate: savedPublishDate,
-      fileSuffix: savedSuffix
-    } = await chrome.storage.local.get([
-      'currentData', 
-      'availableTimelines', 
-      'selectedTimeline',
-      'vtuber',
-      'publishDate',
-      'fileSuffix'
-    ]);
-    
-    if (savedData) {
-      currentData = savedData;
-      jsonPreview.textContent = JSON.stringify(currentData, null, 2);
-      uploadBtn.disabled = false;
-      
-      // Restore VTuber selection
-      if (savedVtuber) {
-        vtuberSelect.value = savedVtuber;
-      }
-      
-      // Restore publish date
-      if (savedPublishDate) {
-        publishDateInput.value = savedPublishDate;
-      } else if (currentData.video_publish_date_str) {
-        publishDateInput.value = currentData.video_publish_date_str;
-      }
-      
-      // Restore file suffix
-      if (savedSuffix) {
-        fileSuffixInput.value = savedSuffix;
-      }
-      
-      // Restore timeline selection
-      if (savedTimelines && savedTimelines.length > 0) {
-        availableTimelines = savedTimelines;
-        timelineSelection.classList.remove('hidden');
-        
-        // Clear existing options
-        timelineSelect.innerHTML = '';
-        
-        // Add options
-        savedTimelines.forEach((item, index) => {
-          const option = document.createElement('option');
-          option.value = index;
-          option.textContent = `${item.user} - ${item.timeline.substring(0, 50)}...`;
-          timelineSelect.appendChild(option);
-        });
-        
-        // Restore selected timeline
-        if (savedTimeline !== null) {
-          timelineSelect.value = savedTimeline;
-          selectedTimeline = savedTimelines[savedTimeline].timeline;
-          
-          // Show song preview
-          const songs = parseTimeline(selectedTimeline);
-          displaySongPreview(songs);
-        }
-      } else if (currentData.song_timeline) {
-        // Single timeline
-        selectedTimeline = typeof currentData.song_timeline === 'string' 
-          ? currentData.song_timeline 
-          : currentData.song_timeline[0]?.timeline;
-        
-        if (selectedTimeline) {
-          const songs = parseTimeline(selectedTimeline);
-          displaySongPreview(songs);
-        }
-      }
-      
-      showStatus('Data restored from previous session', 'info');
-    }
-  }
-  
-  // Check if token is saved
-  const { token, repo } = await chrome.storage.local.get(['token', 'repo']);
-  if (token) {
-    tokenInput.value = token;
-    if (repo) {
-      githubRepoInput.value = repo;
-    }
-    setupSection.classList.add('hidden');
-    uploadSection.classList.remove('hidden');
-    
-    // Restore previous state
-    await restoreState();
-  }
-  
-  // Load target users
-  const { targetUsers: savedTargetUsers } = await chrome.storage.local.get('targetUsers');
-  if (savedTargetUsers) {
-    targetUsersTextarea.value = savedTargetUsers.join('\n');
-  } else {
-    // Load default target users
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tab.url.includes('youtube.com')) {
-      try {
-        const response = await chrome.tabs.sendMessage(tab.id, { action: 'getTargetUsers' });
-        targetUsersTextarea.value = response.targetUsers.join('\n');
-      } catch (error) {
-        console.log('Could not load default target users');
-      }
-    }
-  }
-  
-  // Save token
-  saveTokenBtn.addEventListener('click', async () => {
-    const token = tokenInput.value.trim();
-    const repo = githubRepoInput.value.trim();
-    
-    if (token) {
-      await chrome.storage.local.set({ token, repo });
-      setupSection.classList.add('hidden');
-      uploadSection.classList.remove('hidden');
-      showStatus('Token saved!', 'success');
-    } else {
-      showStatus('Please enter a valid token', 'error');
-    }
-  });
-  
-  // Settings button
-  settingsBtn.addEventListener('click', () => {
-    uploadSection.classList.add('hidden');
-    settingsSection.classList.remove('hidden');
-  });
-  
-  // Update config button
-  updateConfigBtn.addEventListener('click', () => {
-    uploadSection.classList.add('hidden');
-    setupSection.classList.remove('hidden');
-    // Pre-fill current values
-    chrome.storage.local.get(['token', 'repo'], (data) => {
-      if (data.token) {
-        tokenInput.value = data.token;
-      }
-      if (data.repo) {
-        githubRepoInput.value = data.repo;
-      }
-    });
-  });
-  
-  // Back button
-  backBtn.addEventListener('click', () => {
-    settingsSection.classList.add('hidden');
-    uploadSection.classList.remove('hidden');
-  });
-  
-  // Back to upload from setup
-  const setupBackBtn = document.createElement('button');
-  setupBackBtn.textContent = '← Back to Upload';
-  setupBackBtn.className = 'back-btn';
-  setupBackBtn.style.marginTop = '10px';
-  setupBackBtn.addEventListener('click', () => {
-    setupSection.classList.add('hidden');
-    uploadSection.classList.remove('hidden');
-  });
-  setupSection.appendChild(setupBackBtn);
-  
-  // Clear state button
-  clearStateBtn.addEventListener('click', async () => {
-    if (confirm('Are you sure you want to clear all saved data?')) {
-      await clearState();
-      currentData = null;
-      availableTimelines = [];
-      selectedTimeline = null;
-      jsonPreview.textContent = '';
-      uploadBtn.disabled = true;
-      timelineSelection.classList.add('hidden');
-      songPreview.classList.add('hidden');
-      vtuberSelect.value = '';
-      publishDateInput.value = '';
-      fileSuffixInput.value = '';
-      showStatus('Data cleared!', 'success');
-    }
-  });
-  
-  // Save settings
-  saveSettingsBtn.addEventListener('click', async () => {
-    const lines = targetUsersTextarea.value.split('\n')
-      .map(line => line.trim())
-      .filter(line => line.length > 0);
-    
-    await chrome.storage.local.set({ targetUsers: lines });
-    showStatus('Settings saved!', 'success');
-    
-    // Also update content script
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tab.url.includes('youtube.com')) {
-      try {
-        await chrome.tabs.sendMessage(tab.id, { action: 'setTargetUsers', targetUsers: lines });
-      } catch (error) {
-        console.log('Could not update content script');
-      }
-    }
-  });
-  
-  // Extract data from current tab
-  extractBtn.addEventListener('click', async () => {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    
-    if (!tab.url.includes('youtube.com')) {
-      showStatus('Please navigate to a YouTube video page', 'error');
-      return;
-    }
-    
-    try {
-      showStatus('Extracting data...', 'info');
-      
-      // Try to send message, if content script is not loaded, inject it
-      let response;
-      try {
-        response = await chrome.tabs.sendMessage(tab.id, { action: 'extractData' });
-      } catch (error) {
-        // Content script not loaded, inject it
-        console.log('Content script not loaded, injecting...');
-        await chrome.scripting.executeScript({
-          target: { tabId: tab.id },
-          files: ['content.js']
-        });
-        
-        // Wait a bit for the script to load
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
-        // Try again
-        response = await chrome.tabs.sendMessage(tab.id, { action: 'extractData' });
-      }
-      
-      currentData = response.data;
-      
-      // Auto-select VTuber
-      if (response.vtuber) {
-        vtuberSelect.value = response.vtuber;
-      }
-      
-      // Auto-fill publish date if available
-      if (currentData.video_publish_date_str) {
-        publishDateInput.value = currentData.video_publish_date_str;
-      }
-      
-      // Save state
-      await saveState();
-      
-      // Check if we have multiple timelines
-      if (Array.isArray(currentData.song_timeline) && currentData.song_timeline.length > 0) {
-        availableTimelines = currentData.song_timeline;
-        
-        // Populate timeline select
-        timelineSelect.innerHTML = '<option value="">Select a user...</option>';
-        availableTimelines.forEach((item, index) => {
-          const option = document.createElement('option');
-          option.value = index;
-          option.textContent = item.user;
-          timelineSelect.appendChild(option);
-        });
-        
-        timelineSelection.classList.remove('hidden');
-        showStatus(`Found ${availableTimelines.length} timeline sources. Please select one.`, 'info');
-      } else {
-        // Single timeline or no timeline
-        selectedTimeline = currentData.song_timeline;
-        showSongPreview(selectedTimeline);
-        updateJSONPreview();
-        uploadBtn.disabled = false;
-        showStatus('Data extracted successfully!', 'success');
-      }
-    } catch (error) {
-      showStatus('Failed to extract data: ' + error.message, 'error');
-      console.error('Extract error:', error);
-    }
-  });
-  
-  // Timeline selection
-  timelineSelect.addEventListener('change', async () => {
-    const index = parseInt(timelineSelect.value);
-    if (!isNaN(index) && availableTimelines[index]) {
-      selectedTimeline = availableTimelines[index].timeline;
-      showSongPreview(selectedTimeline);
-      updateJSONPreview();
-      uploadBtn.disabled = false;
-      showStatus(`Selected timeline from ${availableTimelines[index].user}`, 'success');
-      
-      // Save state
-      await saveState();
-    }
-  });
-  
-  // Show song preview
-  function showSongPreview(timeline) {
-    const songs = parseTimeline(timeline);
-    songList.innerHTML = '';
-    
-    if (songs.length === 0) {
-      songList.innerHTML = '<p class="no-songs">No songs found in timeline</p>';
-      return;
-    }
-    
-    songs.forEach((song, index) => {
-      const songItem = document.createElement('div');
-      songItem.className = 'song-item';
-      
-      const artistDisplay = song.artist ? ` / ${song.artist}` : '';
-      songItem.innerHTML = `
-        <span class="song-number">${index + 1}.</span>
-        <span class="song-time">${song.time}</span>
-        <span class="song-title">${song.title}${artistDisplay}</span>
-      `;
-      songList.appendChild(songItem);
-    });
-    
-    songPreview.classList.remove('hidden');
-  }
-  
   // Parse timeline to extract songs (matching original project logic)
   function parseTimeline(timeline) {
+    console.log('parseTimeline called with:', timeline.substring(0, 100) + '...');
     const songs = [];
     const lines = timeline.split('\n');
     
@@ -428,6 +117,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           artist = artist.replace(/\s*~?\d{1,2}:\d{2}(?::\d{2})?.*$/, '').trim();
         }
         
+        // Check for placeholder #{=x}
+        const hasPlaceholder = title.includes('#{=x}') || (artist && artist.includes('#{=x}'));
+        
         // Filter out non-song content
         const shouldFilter = filterKeywords.some(keyword => {
           if (keyword === 'OP' || keyword === 'ED' || keyword === '待機' || keyword === 'MC' || keyword === 'スクショタイム' || keyword === 'ばいばーい！') {
@@ -440,7 +132,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           songs.push({
             time: time,
             title: title,
-            artist: artist
+            artist: artist,
+            hasPlaceholder: hasPlaceholder
           });
         }
       }
@@ -448,6 +141,250 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     return songs;
   }
+  
+  // Show song preview
+  function showSongPreview(timeline) {
+    console.log('showSongPreview called');
+    const songs = parseTimeline(timeline);
+    console.log('Parsed songs:', songs.length);
+    songList.innerHTML = '';
+    
+    if (songs.length === 0) {
+      songList.innerHTML = '<p class="no-songs">No songs found in timeline</p>';
+      return;
+    }
+    
+    songs.forEach((song, index) => {
+      const songItem = document.createElement('div');
+      songItem.className = 'song-item';
+      
+      // Add special class for songs with placeholder
+      if (song.hasPlaceholder) {
+        songItem.classList.add('has-placeholder');
+      }
+      
+      const artistDisplay = song.artist ? ` / ${song.artist}` : '';
+      const placeholderIndicator = song.hasPlaceholder ? ' <span class="placeholder-indicator">⚠️</span>' : '';
+      
+      songItem.innerHTML = `
+        <span class="song-number">${index + 1}.</span>
+        <span class="song-time">${song.time}</span>
+        <span class="song-title">${song.title}${artistDisplay}${placeholderIndicator}</span>
+      `;
+      songList.appendChild(songItem);
+    });
+    
+    songPreview.classList.remove('hidden');
+  }
+  
+  // Clear state
+  async function clearState(showMessage = true) {
+    console.log('Clearing state...');
+    currentData = null;
+    availableTimelines = [];
+    selectedTimeline = null;
+    jsonPreview.textContent = 'Click "Extract Data" to preview';
+    uploadBtn.disabled = true;
+    vtuberSelect.value = '';
+    publishDateInput.value = '';
+    fileSuffixInput.value = '';
+    timelineSelection.classList.add('hidden');
+    songPreview.classList.add('hidden');
+    timelineEditor.classList.add('hidden');
+    if (showMessage) {
+      showStatus('State cleared', 'info');
+    }
+  }
+  
+  // Check if token is saved
+  const { token, repo } = await chrome.storage.local.get(['token', 'repo']);
+  if (token) {
+    tokenInput.value = token;
+    if (repo) {
+      githubRepoInput.value = repo;
+    }
+    setupSection.classList.add('hidden');
+    uploadSection.classList.remove('hidden');
+  }
+  
+  // Load target users
+  const { targetUsers: savedTargetUsers } = await chrome.storage.local.get('targetUsers');
+  if (savedTargetUsers) {
+    targetUsersTextarea.value = savedTargetUsers.join('\n');
+  } else {
+    // Load default target users
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tab.url.includes('youtube.com')) {
+      try {
+        const response = await chrome.tabs.sendMessage(tab.id, { action: 'getTargetUsers' });
+        targetUsersTextarea.value = response.targetUsers.join('\n');
+      } catch (error) {
+        console.log('Could not load default target users');
+      }
+    }
+  }
+  
+  // Save token
+  saveTokenBtn.addEventListener('click', async () => {
+    const token = tokenInput.value.trim();
+    const repo = githubRepoInput.value.trim();
+    
+    if (token) {
+      await chrome.storage.local.set({ token, repo });
+      setupSection.classList.add('hidden');
+      uploadSection.classList.remove('hidden');
+      showStatus('Token saved!', 'success');
+    } else {
+      showStatus('Please enter a valid token', 'error');
+    }
+  });
+  
+  // Settings button
+  settingsBtn.addEventListener('click', () => {
+    uploadSection.classList.add('hidden');
+    settingsSection.classList.remove('hidden');
+  });
+  
+  // Update token button (in settings section)
+  updateTokenBtn.addEventListener('click', async () => {
+    settingsSection.classList.add('hidden');
+    setupSection.classList.remove('hidden');
+    // Pre-fill current values
+    const data = await chrome.storage.local.get(['token', 'repo']);
+    if (data.token) {
+      tokenInput.value = data.token;
+    }
+    if (data.repo) {
+      githubRepoInput.value = data.repo;
+    }
+  });
+  
+  // Back button
+  backBtn.addEventListener('click', () => {
+    settingsSection.classList.add('hidden');
+    uploadSection.classList.remove('hidden');
+  });
+  
+  // Back to upload from setup
+  const setupBackBtn = document.createElement('button');
+  setupBackBtn.textContent = '← Back to Upload';
+  setupBackBtn.className = 'back-btn';
+  setupBackBtn.style.marginTop = '10px';
+  setupBackBtn.addEventListener('click', () => {
+    setupSection.classList.add('hidden');
+    uploadSection.classList.remove('hidden');
+  });
+  setupSection.appendChild(setupBackBtn);
+  
+  // Save settings
+  saveSettingsBtn.addEventListener('click', async () => {
+    const lines = targetUsersTextarea.value.split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0);
+    
+    await chrome.storage.local.set({ targetUsers: lines });
+    showStatus('Settings saved!', 'success');
+    
+    // Also update content script
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tab.url.includes('youtube.com')) {
+      try {
+        await chrome.tabs.sendMessage(tab.id, { action: 'setTargetUsers', targetUsers: lines });
+      } catch (error) {
+        console.log('Could not update content script');
+      }
+    }
+  });
+  
+  // Extract data from current tab
+  if (extractBtn) {
+    extractBtn.addEventListener('click', async () => {
+      console.log('Extract button clicked');
+      try {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        
+        if (!tab.url.includes('youtube.com')) {
+          showStatus('Please navigate to a YouTube video page', 'error');
+          return;
+        }
+        
+        showStatus('Extracting data...', 'info');
+      
+        // Try to send message, if content script is not loaded, inject it
+        let response;
+        try {
+          response = await chrome.tabs.sendMessage(tab.id, { action: 'extractData' });
+        } catch (error) {
+          // Content script not loaded, inject it
+          console.log('Content script not loaded, injecting...');
+          await chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['content.js']
+          });
+          
+          // Wait a bit for the script to load
+          await new Promise(resolve => setTimeout(resolve, 500));
+          
+          // Try again
+          response = await chrome.tabs.sendMessage(tab.id, { action: 'extractData' });
+        }
+      
+        currentData = response.data;
+      
+        // Auto-select VTuber
+        if (response.vtuber) {
+          vtuberSelect.value = response.vtuber;
+        }
+      
+        // Auto-fill publish date if available
+        if (currentData.video_publish_date_str) {
+          publishDateInput.value = currentData.video_publish_date_str;
+        }
+      
+        // Check if we have multiple timelines
+        if (Array.isArray(currentData.song_timeline) && currentData.song_timeline.length > 0) {
+          availableTimelines = currentData.song_timeline;
+        
+          // Populate timeline select
+          timelineSelect.innerHTML = '<option value="">Select a user...</option>';
+          availableTimelines.forEach((item, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = item.user;
+            timelineSelect.appendChild(option);
+          });
+        
+          timelineSelection.classList.remove('hidden');
+          showStatus(`Found ${availableTimelines.length} timeline sources. Please select one.`, 'info');
+        } else if (currentData.song_timeline && typeof currentData.song_timeline === 'string') {
+          // Single timeline (string)
+          selectedTimeline = currentData.song_timeline;
+          showSongPreview(selectedTimeline);
+          updateJSONPreview();
+          uploadBtn.disabled = false;
+          showStatus('Data extracted successfully!', 'success');
+        } else {
+          // No timeline or invalid timeline
+          showStatus('No valid timeline found in extracted data', 'error');
+        }
+      } catch (error) {
+        showStatus('Failed to extract data: ' + error.message, 'error');
+        console.error('Extract error:', error);
+      }
+    });
+  }
+  
+  // Timeline selection
+  timelineSelect.addEventListener('change', async () => {
+    const index = parseInt(timelineSelect.value);
+    if (!isNaN(index) && availableTimelines[index]) {
+      selectedTimeline = availableTimelines[index].timeline;
+      showSongPreview(selectedTimeline);
+      updateJSONPreview();
+      uploadBtn.disabled = false;
+      showStatus(`Selected timeline from ${availableTimelines[index].user}`, 'success');
+    }
+  });
   
   // Update JSON preview
   function updateJSONPreview() {
@@ -479,9 +416,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     timelineEditor.classList.add('hidden');
     songPreview.classList.remove('hidden');
     showStatus('Timeline updated!', 'success');
-    
-    // Save state
-    await saveState();
   });
   
   // Upload to GitHub
@@ -587,8 +521,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         showStatus('Upload successful! GitHub Actions will deploy automatically.', 'success');
         uploadBtn.disabled = true;
         
-        // Clear saved state after successful upload
-        await clearState();
+        // Clear saved state after successful upload (without showing message)
+        await clearState(false);
       } else {
         const error = await uploadResponse.json();
         showStatus('Upload failed: ' + error.message, 'error');
@@ -598,8 +532,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
   
-  function showStatus(message, type) {
-    status.textContent = message;
-    status.className = `status ${type}`;
-  }
 });

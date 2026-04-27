@@ -60,8 +60,6 @@
       <div class="actions">
         <button id="extract-btn">Extract Data</button>
         <button id="settings-btn">⚙️ Settings</button>
-        <button id="update-config-btn">🔑 Update Token</button>
-        <button id="clear-state-btn" style="background: #f44336;">🗑️ Clear</button>
       </div>
       
       <!-- Timeline Selection -->
@@ -105,10 +103,17 @@
     <!-- Settings Section -->
     <div id="settings-section" class="section hidden">
       <h2>Settings</h2>
+      
       <div class="form-group">
         <label for="target-users">Target Users (one per line):</label>
         <textarea id="target-users" rows="10" placeholder="@user1&#10;@user2&#10;@user3"></textarea>
       </div>
+      
+      <div class="form-group">
+        <label>GitHub Configuration:</label>
+        <button id="update-token-btn" style="width: 100%;">🔑 Update GitHub Token</button>
+      </div>
+      
       <div class="actions">
         <button id="back-btn">← Back</button>
         <button id="save-settings-btn" class="primary">Save Settings</button>

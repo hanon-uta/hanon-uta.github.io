@@ -14,7 +14,8 @@ export const VTUBERS  = {
         mark: '🐺🩰',
         favicon: '/favicon2.png',
         uri: '/saotomegabu',
-        cover: 'https://img.youtube.com/vi/nMmWVciVOgk/maxresdefault.jpg'
+        cover: 'https://img.youtube.com/vi/nMmWVciVOgk/maxresdefault.jpg',
+        color: '#be7cf0',
     },
     KANARU_HANON: {
         name: 'Hanon',
@@ -22,7 +23,8 @@ export const VTUBERS  = {
         mark: '🎀🎶',
         favicon: '/favicon.png',
         uri: '/',
-        cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg'
+        cover: 'https://img.youtube.com/vi/V8gg1yrTzsw/maxresdefault.jpg',
+        color: '#3eaed8',
     },
     AKATSUKI_CLARA: {
         name: 'Clara',
@@ -30,7 +32,8 @@ export const VTUBERS  = {
         mark: '🎠💛',
         favicon: '/favicon3.png',
         uri: '/akatsukiclara',
-        cover: 'https://img.youtube.com/vi/iavuOMwYjpg/maxresdefault.jpg'
+        cover: 'https://img.youtube.com/vi/iavuOMwYjpg/maxresdefault.jpg',
+        color: '#e07008',
     },
     TOKIWA_KANAME: {
         name: 'Kaname',
@@ -39,6 +42,7 @@ export const VTUBERS  = {
         favicon: '/kaname.jpg',
         uri: '/tokiwakaname',
         cover: 'https://img.youtube.com/vi/xqNkizTgB-E/maxresdefault.jpg',
+        color: '#02a836',
     },
 
 } as const;

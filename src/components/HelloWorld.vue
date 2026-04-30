@@ -66,9 +66,9 @@ const { syncFavorites } = useSyncFavorite();
 
 <template>
   <!-- search box -->
-  <section class="row my-4 mt-0">
-    <div class="input-group">
-      <label :class="isDark ? 'bg-dark' : 'bg-light'" class="input-group-text bg-light" for="searchInput">
+  <section class="search-wrap mb-4">
+    <div class="input-group search-group">
+      <label class="input-group-text search-icon-col" for="searchInput">
         <i class="iconfont icon-sousuo"></i>
       </label>
       <input
@@ -77,7 +77,7 @@ const { syncFavorites } = useSyncFavorite();
         v-model="searchQuery"
         :autocomplete="searchPlaceHolders.length > 0 ? 'off' : 'on'"
         autocapitalize="off"
-        class="form-control shadow-none"
+        class="form-control search-input"
         list="nameList"
         placeholder="曲名またはアーティスト名で検索..."
         spellcheck="false"
@@ -190,35 +190,28 @@ const { syncFavorites } = useSyncFavorite();
 </template>
 
 <style scoped>
-
-@media (min-width: 365px) {
-  .d-xxs-inline {
-    display: inline !important;
-  }
+.search-wrap { max-width: 540px; margin: 0 auto; }
+.search-group { border-radius: 0.75rem; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.search-group:focus-within { box-shadow: 0 4px 20px rgba(var(--netease-accent-rgb, 13,110,253), .2); }
+.search-icon-col {
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-right: none;
+  font-size: 1.1rem;
 }
-
-.responsive-width {
-  width: 100%; /* Default is 100% */
+.search-input {
+  border: 1px solid var(--bs-border-color);
+  border-left: none;
+  font-size: 1rem;
+  height: 48px;
+  background: var(--bs-body-bg);
 }
+.search-input:focus { border-color: var(--bs-border-color); box-shadow: none; }
+.search-input::placeholder { color: var(--bs-secondary-color); opacity: .6; }
 
-@media (min-width: 576px) {
-  /* sm breakpoint */
-  .responsive-width {
-    width: auto !important; /* sm and above restore the auto width */
-  }
-}
-
-@keyframes infinite-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.rotation-animate {
-  animation: infinite-rotate 2s linear infinite;
-}
-
+@media (min-width: 365px) { .d-xxs-inline { display: inline !important; } }
+.responsive-width { width: 100%; }
+@media (min-width: 576px) { .responsive-width { width: auto !important; } }
+@keyframes infinite-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.rotation-animate { animation: infinite-rotate 2s linear infinite; }
 </style>

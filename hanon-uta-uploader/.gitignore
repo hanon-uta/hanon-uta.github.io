@@ -1,6 +1,5 @@
-# Ignore generated icons
-*.png
-!icon.svg
+# Icons (must be committed for browser extension loading)
+# !icon.svg is kept as source file
 
 # Ignore node_modules (if using npm)
 node_modules/

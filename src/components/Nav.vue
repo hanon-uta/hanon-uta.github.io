@@ -41,36 +41,70 @@ watch(vtuberColor, (c) => {
   document.documentElement.style.setProperty('--netease-accent-rgb', `${r},${g},${b}`)
 }, { immediate: true })
 
-const collapsed = ref(true)
-function toggle() { collapsed.value = !collapsed.value }
-
 const modalInitStore = useModalInitStore()
 const authStore = useAuthStore();
 const { isLoggedIn } = storeToRefs(authStore);
+
+const collapsed = ref(true)
 </script>
 
 <template>
-  <nav v-if="isMenuRoute" class="app-nav my-3">
-    <div class="d-flex justify-content-between align-items-center">
-      <button class="btn btn-sm d-sm-none" @click="toggle">
-        <span v-if="collapsed">☰</span>
-        <span v-else>✕</span>
-      </button>
-      <div class="d-none d-sm-flex flex-wrap">
-        <router-link v-for="r in menuRoutes" :key="r.path" :to="r.path"
-          class="nav-link-item text-decoration-none"
-          :class="r.name === currentRouteName ? 'active' : ''"
-          :style="r.name === currentRouteName && vtuberColor ? { borderImage: `linear-gradient(90deg, ${vtuberColor}, transparent) 1` } : {}">
-          {{ r.meta.title }}
-        </router-link>
+  <nav v-if="isMenuRoute" class="app-nav navbar navbar-expand-sm py-2 mb-3">
+    <div class="container-fluid px-0">
+      <!-- Mobile header row: toggler + actions -->
+      <div class="d-flex d-sm-none w-100 align-items-center">
+        <button class="navbar-toggler border-0 px-0 me-2 toggler-clean" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent"
+                aria-expanded="false" aria-label="ナビゲーション"
+                :class="collapsed ? '' : 'btn btn-close'"
+                @click="collapsed = !collapsed">
+          <span v-if="collapsed" class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-actions d-flex align-items-center gap-1">
+          <button class="btn btn-sm" data-bs-target="#staticBackdrop" data-bs-toggle="modal"
+                  @click="modalInitStore.triggerSongInfoInit()">
+            <i class="iconfont icon-gequliebiao me-1"></i><span class="d-none d-sm-inline">曲リスト</span>
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-sm position-relative" data-bs-toggle="dropdown"
+                    :title="isLoggedIn ? 'オンライン' : 'オフライン'">
+              <i class="iconfont icon-gongnengkaiguan"></i>
+              <span class="nav-dot position-absolute top-0 end-0 rounded-circle"
+                    :class="isLoggedIn ? 'bg-success' : 'bg-secondary'"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <UserInfo />
+              <li><button class="dropdown-item" @click="replaceQueryParam(router, route, 'filter', 'favorite')">お気に入りの曲</button></li>
+              <li class="dropdown-item cursor-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="modalInitStore.triggerStatsInit()">歌唱統計</li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://github.com/hanon-uta/hanon-uta.github.io/blob/main/README.md" target="_blank" rel="noopener noreferrer">このサイドについて</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="d-flex align-items-center my-gap-1 flex-shrink-0">
+
+      <!-- Desktop tabs + Mobile collapse -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="navbar-nav mobile-center">
+          <router-link v-for="r in menuRoutes" :key="r.path" :to="r.path"
+            class="nav-link"
+            :class="{ active: r.name === currentRouteName }"
+            :style="r.name === currentRouteName && vtuberColor
+              ? { borderImage: `linear-gradient(90deg, ${vtuberColor}, transparent) 1` } : {}">
+            {{ r.meta.title }}
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Desktop actions -->
+      <div class="nav-actions d-none d-sm-flex align-items-center gap-1">
         <button class="btn btn-sm" data-bs-target="#staticBackdrop" data-bs-toggle="modal"
                 @click="modalInitStore.triggerSongInfoInit()">
-          <i class="iconfont icon-gequliebiao me-1"></i><span class="d-none d-sm-inline">曲リスト</span>
+          <i class="iconfont icon-gequliebiao me-1"></i><span>曲リスト</span>
         </button>
         <div class="dropdown">
-          <button class="btn btn-sm position-relative" data-bs-toggle="dropdown" :title="isLoggedIn ? 'オンライン' : 'オフライン'">
+          <button class="btn btn-sm position-relative" data-bs-toggle="dropdown"
+                  :title="isLoggedIn ? 'オンライン' : 'オフライン'">
             <i class="iconfont icon-gongnengkaiguan"></i>
             <span class="nav-dot position-absolute top-0 end-0 rounded-circle"
                   :class="isLoggedIn ? 'bg-success' : 'bg-secondary'"></span>
@@ -85,42 +119,41 @@ const { isLoggedIn } = storeToRefs(authStore);
         </div>
       </div>
     </div>
-    <Transition name="slide">
-      <div v-if="!collapsed" class="d-sm-none pt-2 text-center">
-        <router-link v-for="r in menuRoutes" :key="r.path" :to="r.path"
-          class="nav-link-item d-block py-1 text-decoration-none"
-          :class="r.name === currentRouteName ? 'active' : ''"
-          :style="r.name === currentRouteName && vtuberColor ? { borderImage: `linear-gradient(90deg, ${vtuberColor}, transparent) 1` } : {}"
-          @click="collapsed = true">
-          {{ r.meta.title }}
-        </router-link>
-      </div>
-    </Transition>
   </nav>
 </template>
 
 <style scoped>
-.app-nav { border-bottom: 1px solid var(--bs-border-color); padding: 0 0 6px 0; }
-.nav-link-item {
+.app-nav { border-bottom: 1px solid var(--bs-border-color); }
+.nav-link {
   color: var(--bs-secondary-color);
   font-size: .92rem;
   padding: 4px 0;
-  margin-right: 20px;
+  padding-left: 0 !important;
+  margin-top: 2px;
+  margin-right: 10px;
   border-bottom: 2px solid transparent;
   transition: color .12s, border-color .12s;
 }
-.nav-link-item:hover { color: var(--bs-body-color); }
-.nav-link-item.active {
+.nav-link:hover { color: var(--bs-body-color); }
+.nav-link.active {
   color: var(--bs-body-color);
   border-bottom: 2px solid;
   border-image-slice: 1;
 }
-@media (max-width: 575px) {
-  .nav-link-item { margin-right: 0; }
-  .nav-link-item.active { border-bottom-color: transparent; font-weight: 600; }
-}
-
-.slide-enter-active { transition: opacity .15s ease; }
-.slide-enter-from { opacity: 0; }
 .nav-dot { width: 6px; height: 6px; }
+.navbar-toggler.btn-close {
+  font-size: 0.95rem;
+  margin-left: 2px;
+}
+.navbar-toggler-icon { width: 1.1em; height: 1.1em; }
+.nav-actions { margin-left: auto; }
+
+.toggler-clean { box-shadow: none !important; }
+.toggler-clean:focus { box-shadow: none !important; }
+
+@media (max-width: 575px) {
+  .mobile-center { text-align: center; }
+  .mobile-center .nav-link { margin-right: 0;}
+  .nav-link.active { border-bottom-color: transparent; font-weight: 600; }
+}
 </style>

@@ -448,16 +448,35 @@ const initializeCharts = async () => {
   });
 };
 
-// Watch for data changes
-watch(
-    [
-      topSongsData, monthlyData, yearlyData, seasonalData, seasonTop30SongsData,
-      selectedYear, selectedSeasonYear, selectedSeason, isDark
-    ],
-    () => {
-      initializeCharts();
-    }
-);
+// Targeted update: Top 30 Bar Chart (year dropdown)
+watch(selectedYear, () => {
+  if (!barChart) return;
+  barChart.data.labels = topSongsData.value.labels;
+  barChart.data.datasets[0].data = topSongsData.value.counts;
+  barChart.data.datasets[0].backgroundColor = colorPalettes.barChart.slice(0, topSongsData.value.labels.length);
+  barChart.update();
+});
+
+// Targeted update: Seasonal Doughnut Chart (season year dropdown)
+watch(selectedSeasonYear, () => {
+  if (!doughnutChart) return;
+  doughnutChart.data.datasets[0].data = seasonalData.value.counts;
+  doughnutChart.update();
+});
+
+// Targeted update: Season Top 30 Bar Chart (season dropdown)
+watch(selectedSeason, () => {
+  if (!seasonTop30Chart) return;
+  seasonTop30Chart.data.labels = seasonTop30SongsData.value.labels;
+  seasonTop30Chart.data.datasets[0].data = seasonTop30SongsData.value.counts;
+  seasonTop30Chart.data.datasets[0].backgroundColor = colorPalettes.barChart.slice(0, seasonTop30SongsData.value.labels.length);
+  seasonTop30Chart.update();
+});
+
+// Theme change: rebuild all charts
+watch(isDark, () => {
+  initializeCharts();
+});
 
 // Initialize all charts on component mount
 onMounted(() => {

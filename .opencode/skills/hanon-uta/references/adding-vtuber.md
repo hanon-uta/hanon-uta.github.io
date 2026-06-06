@@ -2,7 +2,7 @@
 
 ## Overview
 
-Adding a new VTuber requires changes in 5 areas. Follow each step in order.
+Adding a new VTuber requires changes in 6 areas. Follow each step in order.
 
 ---
 
@@ -77,7 +77,37 @@ Add a favicon image. The file name must match the `favicon` field in the config 
 
 ---
 
-## Step 5: Verify Build
+## Step 5: Update Chrome Extension
+
+**Directory:** `hanon-uta-uploader/`
+
+If the Chrome extension should support the new VTuber, update these files:
+
+### `content.js` — VTuber Detection (line ~112)
+
+Add the new VTuber to the `detectVTuber()` patterns object:
+
+```js
+'NewVtuber': ['日本語名', 'NewVtuber Ch.'],
+```
+
+The key must match the `name` field from `constants.ts`. The array values are the VTuber's Japanese display name and YouTube channel name (used to detect which VTuber's video is open).
+
+### `popup.html` — VTuber Select Dropdown (line ~41)
+
+Add a new `<option>` to the dropdown:
+
+```html
+<option value="NewVtuber">NewVtuber (日本語名)</option>
+```
+
+The `value` must match the key used in `content.js` and the directory name under `src/assets/data/`.
+
+---
+
+## Step 6: Verify Build
+
+Note: `vite.config.ts` is fully derived from the `VTUBERS` config — sitemap routes, static HTML templates, and code-splitting chunks are auto-generated. The only hardcoded reference is `defaultData = VTUBERS.KANARU_HANON` (used for root index, 404, terms, privacy pages) — only change this if you want a different VTuber as the default.
 
 Run the build and check:
 
@@ -107,3 +137,6 @@ The Vite custom plugin should generate `dist/newvtuber/index.html` with VTuber-s
 | Favicon | `public/favicon-newvtuber.png` (create new) |
 | Route | Auto-generated from config — no manual routing needed |
 | VTuber tab | Auto-generated in `Nav.vue` from config |
+| Vite build | Auto-derived from config — no changes needed (unless changing default VTuber) |
+| Extension detection | `hanon-uta-uploader/content.js` → `detectVTuber()` patterns |
+| Extension dropdown | `hanon-uta-uploader/popup.html` → VTuber `<option>` |

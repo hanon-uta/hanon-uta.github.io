@@ -17,6 +17,7 @@ import {
   Legend
 } from 'chart.js';
 import { useColorModeStore } from "@/stores/color-mode.ts";
+import { getChartTheme } from "@/utils/chartConfig.ts";
 import { storeToRefs } from "pinia";
 
 // Register Chart.js components
@@ -227,9 +228,7 @@ const initializeCharts = async () => {
   if (doughnutChart) doughnutChart.destroy();
   if (seasonTop30Chart) seasonTop30Chart.destroy();
 
-  // Get dark/light mode colors for consistent styling
-  const textColor = isDark.value ? '#dee2e6' : '#666666';
-  const gridColor = isDark.value ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+  const theme = getChartTheme(isDark.value);
 
   // 1. Bar Chart - Top 30 Songs
   barChart = new Chart(barChartRef.value, {
@@ -248,21 +247,24 @@ const initializeCharts = async () => {
       indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
+      font: theme.font,
       plugins: {
         legend: { display: false },
-        title: { display: false }
+        title: { display: false },
+        tooltip: theme.tooltip,
       },
       scales: {
         x: {
           beginAtZero: true,
-          title: { display: true, text: '歌唱回数', color: textColor },
-          grid: { color: gridColor },
-          ticks: { color: textColor }
+          title: { display: true, text: '歌唱回数', color: theme.textColor, font: theme.scale.title.font },
+          grid: { color: theme.gridColor },
+          ticks: { color: theme.textColor, font: theme.font }
         },
         y: {
-          grid: { color: gridColor },
+          grid: { color: theme.gridColor },
           ticks: {
-            color: textColor,
+            color: theme.textColor,
+            font: theme.font,
             autoSkip: false,
             maxRotation: 0,
             callback: function(value) {
@@ -304,28 +306,23 @@ const initializeCharts = async () => {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      font: theme.font,
       plugins: {
         title: { display: false },
-        legend: { labels: { color: textColor, font: { size: 12 } } },
-        tooltip: {
-          backgroundColor: isDark.value ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.9)',
-          titleColor: textColor,
-          bodyColor: textColor,
-          borderColor: colorPalettes.lineChart,
-          borderWidth: 1
-        }
+        legend: { labels: theme.legend.labels },
+        tooltip: theme.tooltip,
       },
       scales: {
         x: {
-          title: { display: true, text: '年月', color: textColor },
-          grid: { color: gridColor },
-          ticks: { color: textColor }
+          title: { display: true, text: '年月', color: theme.textColor, font: theme.scale.title.font },
+          grid: { color: theme.gridColor },
+          ticks: { color: theme.textColor, font: theme.font }
         },
         y: {
           beginAtZero: true,
-          title: { display: true, text: '歌曲数', color: textColor },
-          grid: { color: gridColor },
-          ticks: { color: textColor }
+          title: { display: true, text: '歌曲数', color: theme.textColor, font: theme.scale.title.font },
+          grid: { color: theme.gridColor },
+          ticks: { color: theme.textColor, font: theme.font }
         }
       },
       interaction: { intersect: false, mode: 'index' },
@@ -348,9 +345,11 @@ const initializeCharts = async () => {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      font: theme.font,
       plugins: {
         title: { display: false },
         tooltip: {
+          ...theme.tooltip,
           callbacks: {
             label: function(context) {
               const label = context.label || '';
@@ -361,7 +360,7 @@ const initializeCharts = async () => {
             }
           }
         },
-        legend: { labels: { color: textColor, font: { size: 12 } } }
+        legend: { labels: theme.legend.labels }
       }
     }
   });
@@ -381,9 +380,11 @@ const initializeCharts = async () => {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      font: theme.font,
       plugins: {
         title: { display: false },
         tooltip: {
+          ...theme.tooltip,
           callbacks: {
             label: function(context) {
               const label = context.label || '';
@@ -394,7 +395,7 @@ const initializeCharts = async () => {
             }
           }
         },
-        legend: { labels: { color: textColor, font: { size: 12 } } }
+        legend: { labels: theme.legend.labels }
       }
     }
   });
@@ -413,34 +414,29 @@ const initializeCharts = async () => {
       }]
     },
     options: {
-      indexAxis: 'y', // Same as first chart - horizontal bars
+      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
+      font: theme.font,
       plugins: {
-        legend: { display: false }, // Match first chart - no legend
+        legend: { display: false },
         title: { display: false },
-        tooltip: {
-          backgroundColor: isDark.value ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.9)',
-          titleColor: textColor,
-          bodyColor: textColor,
-          borderColor: isDark.value ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0,0,0,0.1)',
-          borderWidth: 1
-        }
+        tooltip: theme.tooltip,
       },
       scales: {
         x: {
           beginAtZero: true,
-          title: { display: true, text: '歌唱回数', color: textColor }, // Match first chart's x-axis title
-          grid: { color: gridColor },
-          ticks: { color: textColor }
+          title: { display: true, text: '歌唱回数', color: theme.textColor, font: theme.scale.title.font },
+          grid: { color: theme.gridColor },
+          ticks: { color: theme.textColor, font: theme.font }
         },
         y: {
-          grid: { color: gridColor },
+          grid: { color: theme.gridColor },
           ticks: {
-            color: textColor,
+            color: theme.textColor,
+            font: theme.font,
             autoSkip: false,
             maxRotation: 0,
-            // Match first chart's label truncation logic
             callback: function(value) {
               const label = this.getLabelForValue(value as number);
               return label.length > 20 ? label.substring(0, 20) + '...' : label;
@@ -485,7 +481,7 @@ onMounted(() => {
           </select>
         </div>
         <div class="card-body">
-          <div class="chart-container">
+          <div class="chart-container-bar">
             <canvas ref="barChartRef"></canvas>
           </div>
         </div>
@@ -493,11 +489,11 @@ onMounted(() => {
     </div>
     <div class="col-12 mb-4">
       <div class="card">
-        <div class="card-header">
-          <h6 class="card-title mb-0 py-2" style="margin: 3px 0 3px 0">月別歌曲数推移</h6>
+        <div class="card-header d-flex align-items-center">
+          <h6 class="card-title mb-0">月別歌曲数推移</h6>
         </div>
         <div class="card-body">
-          <div class="chart-container">
+          <div class="chart-container-line">
             <canvas ref="lineChartRef"></canvas>
           </div>
         </div>
@@ -509,11 +505,11 @@ onMounted(() => {
   <div class="row">
     <div class="col-xl-6 col-lg-12 mb-4">
       <div class="card">
-        <div class="card-header">
-          <h6 class="card-title mb-0 py-2" style="margin: 3px 0 3px 0">年間歌曲数比較</h6>
+        <div class="card-header d-flex align-items-center">
+          <h6 class="card-title mb-0">年間歌曲数比較</h6>
         </div>
-        <div class="card-body">
-          <div class="chart-container">
+          <div class="card-body">
+          <div class="chart-container-pie">
             <canvas ref="pieChartRef"></canvas>
           </div>
         </div>
@@ -531,8 +527,8 @@ onMounted(() => {
             </option>
           </select>
         </div>
-        <div class="card-body">
-          <div class="chart-container">
+          <div class="card-body">
+          <div class="chart-container-pie">
             <canvas ref="doughnutChartRef"></canvas>
           </div>
         </div>
@@ -554,7 +550,7 @@ onMounted(() => {
           </select>
         </div>
         <div class="card-body">
-          <div class="chart-container">
+          <div class="chart-container-bar">
             <canvas ref="seasonTop30ChartRef"></canvas>
           </div>
         </div>
@@ -564,7 +560,16 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.chart-container {
-  min-height: 422px;
+.card-header {
+  min-height: 54px;
+}
+.chart-container-bar {
+  min-height: 600px;
+}
+.chart-container-line {
+  min-height: 400px;
+}
+.chart-container-pie {
+  min-height: 300px;
 }
 </style>

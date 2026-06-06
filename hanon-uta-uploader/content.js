@@ -110,19 +110,24 @@ function extractCommentTimeline() {
 // Detect VTuber type from video title and artist
 function detectVTuber(videoTitle, videoArtist) {
   const patterns = {
-    'Hanon': ['香鳴ハノン', 'Hanon Ch.', 'パレプロ'],
+    'Hanon': ['香鳴ハノン', 'Hanon Ch.'],
     'Clara': ['暁月クララ', 'Clara Ch.'],
     'Gabu': ['鎖乙女がぶ', 'Gabu Ch.'],
     'Kaname': ['常磐カナメ', 'Kaname Ch.']
   };
-  
+
   const text = `${videoTitle} ${videoArtist}`;
+  let bestMatch = null;
+  let bestLength = 0;
   for (const [vtuber, keywords] of Object.entries(patterns)) {
-    if (keywords.some(keyword => text.includes(keyword))) {
-      return vtuber;
+    for (const keyword of keywords) {
+      if (text.includes(keyword) && keyword.length > bestLength) {
+        bestMatch = vtuber;
+        bestLength = keyword.length;
+      }
     }
   }
-  return null;
+  return bestMatch;
 }
 
 // Listen for messages from popup
